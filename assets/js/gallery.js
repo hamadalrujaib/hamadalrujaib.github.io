@@ -2,9 +2,10 @@
 
 (function () {
   var ERAS = {
-    egypt: 'مصر',
-    ministry: 'الوزارة',
-    kuwait: 'الكويت'
+    mission: 'البعثة',
+    kuwait: 'الكويت',
+    embassy: 'السفارة',
+    ministry: 'الوزارة'
   };
 
   var grid = document.getElementById('grid');
