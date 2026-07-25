@@ -26,7 +26,7 @@
     })
     .then(function (data) {
       photos = data;
-      countEl.textContent = photos.length + ' صورة';
+      countEl.textContent = photos.length.toLocaleString('ar-EG') + ' صورة';
       render('all');
     })
     .catch(function () {
