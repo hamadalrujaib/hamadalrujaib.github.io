@@ -1,0 +1,107 @@
+/* ===== الألحان والتسجيلات ===== */
+
+.track-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:2rem;
+  margin:2rem 0 3rem;
+}
+
+.track{
+  background:#fff;
+  border:1px solid #E3DCD0;
+  border-radius:4px;
+  overflow:hidden;
+  display:flex;
+  flex-direction:column;
+}
+
+/* واجهة المشغّل المؤجّل */
+.yt-facade,
+.track iframe{
+  display:block;
+  width:100%;
+  aspect-ratio:16/9;
+  border:0;
+}
+
+.yt-facade{
+  padding:0;
+  cursor:pointer;
+  background-color:#16283A;
+  background-size:cover;
+  background-position:center;
+  position:relative;
+}
+
+.yt-facade::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(22,40,58,.25);
+  transition:background .2s;
+}
+
+.yt-facade:hover::after,
+.yt-facade:focus-visible::after{
+  background:rgba(22,40,58,.05);
+}
+
+.yt-play{
+  position:absolute;
+  top:50%;
+  right:50%;
+  transform:translate(50%,-50%);
+  width:64px;
+  height:64px;
+  border-radius:50%;
+  background:rgba(247,244,238,.92);
+  z-index:1;
+}
+
+.yt-play::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  right:50%;
+  transform:translate(60%,-50%);
+  border-style:solid;
+  border-width:11px 18px 11px 0;
+  border-color:transparent #A67C3D transparent transparent;
+}
+
+.track-body{padding:1.1rem 1.2rem 1.3rem;}
+
+.track-title{
+  font-family:"Amiri",serif;
+  font-size:1.3rem;
+  font-weight:700;
+  color:#16283A;
+  margin:0 0 .4rem;
+  line-height:1.4;
+}
+
+.track-meta{
+  font-size:.9rem;
+  color:#5A5348;
+  margin:0 0 .3rem;
+  line-height:1.7;
+}
+
+.track-note{
+  font-size:.9rem;
+  color:#5A5348;
+  margin:.5rem 0 0;
+  line-height:1.7;
+}
+
+.track-source{
+  font-size:.8rem;
+  color:#8A8272;
+  margin:.6rem 0 0;
+}
+
+@media (max-width:520px){
+  .track-list{grid-template-columns:1fr;gap:1.5rem;}
+  .yt-play{width:52px;height:52px;}
+}
