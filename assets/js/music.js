@@ -29,9 +29,7 @@
       return current === 'all' ? true : t.type === current;
     });
 
-    countEl.textContent = shown.length
-      ? arabicNum(shown.length) + ' تسجيل'
-      : '';
+    countEl.textContent = shown.length ? countLabel(shown.length) : '';
 
     if (!shown.length) {
       listEl.innerHTML = '<p class="grid-status">لا توجد تسجيلات في هذا القسم بعد.</p>';
@@ -125,5 +123,11 @@
     return String(n).replace(/\d/g, function (d) {
       return '٠١٢٣٤٥٦٧٨٩'[d];
     });
+  }
+  function countLabel(n) {
+    if (n === 1) return 'تسجيل واحد';
+    if (n === 2) return 'تسجيلان';
+    if (n <= 10) return arabicNum(n) + ' تسجيلات';
+    return arabicNum(n) + ' تسجيلاً';
   }
 })();
