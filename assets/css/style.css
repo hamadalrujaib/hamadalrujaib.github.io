@@ -1,1 +1,288 @@
-/* أرشيف حمد الرجيب */
+/* أرشيف حمد عيسى جاسم الرجيب — التنسيقات الأساسية */
+
+:root{
+  --ivory:#F7F4EE;
+  --paper:#FFFFFF;
+  --navy:#16283A;
+  --navy-soft:#33506B;
+  --gold:#A67C3D;
+  --gold-pale:#DCC9A6;
+  --rule:#E0D9CC;
+
+  --display:"Amiri", serif;
+  --body:"IBM Plex Sans Arabic", system-ui, sans-serif;
+
+  --wrap:1120px;
+}
+
+*{box-sizing:border-box;}
+
+html{scroll-behavior:smooth;}
+
+body{
+  margin:0;
+  background:var(--ivory);
+  color:var(--navy);
+  font-family:var(--body);
+  font-weight:400;
+  font-size:17px;
+  line-height:1.9;
+  -webkit-font-smoothing:antialiased;
+}
+
+a{color:inherit;text-decoration:none;}
+
+.wrap{
+  max-width:var(--wrap);
+  margin-inline:auto;
+  padding-inline:24px;
+}
+
+.skip{
+  position:absolute;right:-9999px;top:0;
+  background:var(--navy);color:var(--ivory);padding:10px 16px;z-index:100;
+}
+.skip:focus{right:16px;top:16px;}
+
+:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+}
+
+/* ---------- الترويسة ---------- */
+
+.site-header{
+  border-bottom:1px solid var(--rule);
+  background:var(--ivory);
+  position:sticky;top:0;z-index:50;
+}
+
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:24px;min-height:78px;
+}
+
+.brand-name{
+  display:block;
+  font-family:var(--display);
+  font-size:21px;font-weight:700;
+  letter-spacing:.2px;
+}
+.brand-sub{
+  display:block;
+  font-size:12px;color:var(--gold);
+  letter-spacing:2px;
+}
+
+.nav{display:flex;gap:26px;flex-wrap:wrap;}
+.nav a{
+  font-size:15px;color:var(--navy-soft);
+  padding-bottom:4px;border-bottom:1px solid transparent;
+  transition:color .2s, border-color .2s;
+}
+.nav a:hover{color:var(--navy);border-bottom-color:var(--gold);}
+.nav a[aria-current="page"]{color:var(--navy);border-bottom-color:var(--gold);}
+
+.nav-toggle{
+  display:none;
+  font-family:var(--body);font-size:15px;
+  background:none;border:1px solid var(--rule);
+  border-radius:2px;padding:8px 14px;color:var(--navy);cursor:pointer;
+}
+
+/* ---------- الواجهة ---------- */
+
+.hero{padding:72px 0 84px;}
+
+.hero-inner{
+  display:grid;
+  grid-template-columns:1.15fr .85fr;
+  gap:56px;align-items:center;
+}
+
+.eyebrow{
+  margin:0 0 14px;
+  font-size:12px;letter-spacing:3px;color:var(--gold);
+}
+
+.hero h1{
+  font-family:var(--display);
+  font-size:clamp(40px,6vw,68px);
+  line-height:1.25;
+  margin:0 0 22px;
+  font-weight:700;
+}
+.hero h1 .surname{
+  position:relative;
+  padding-inline-start:0;
+}
+.hero h1 .surname::after{
+  content:"";
+  display:block;
+  width:72px;height:2px;
+  background:var(--gold);
+  margin-top:18px;
+}
+
+.lede{
+  margin:0 0 30px;
+  font-size:18px;
+  color:var(--navy-soft);
+  max-width:52ch;
+}
+
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+
+.btn{
+  display:inline-block;
+  padding:13px 26px;
+  font-size:15px;
+  border:1px solid var(--navy);
+  border-radius:2px;
+  transition:background .2s,color .2s;
+}
+.btn-primary{background:var(--navy);color:var(--ivory);}
+.btn-primary:hover{background:#0E1C29;}
+.btn-ghost{background:transparent;color:var(--navy);}
+.btn-ghost:hover{background:var(--navy);color:var(--ivory);}
+
+.portrait{margin:0;}
+.portrait-frame{
+  aspect-ratio:4/5;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  box-shadow:0 1px 0 var(--gold-pale);
+  display:flex;align-items:center;justify-content:center;
+  position:relative;
+}
+.portrait-frame::after{
+  content:attr(data-placeholder);
+  color:#B6AC9A;font-size:14px;letter-spacing:1px;
+}
+.portrait-frame img{width:100%;height:100%;object-fit:cover;display:block;}
+.portrait-frame:has(img)::after{content:none;}
+.portrait figcaption{
+  margin-top:12px;font-size:13px;color:#8C8375;text-align:center;
+}
+
+/* ---------- المواقع ---------- */
+
+.section-title{
+  font-family:var(--display);
+  font-size:30px;font-weight:700;
+  margin:0 0 32px;
+  padding-bottom:14px;
+  border-bottom:1px solid var(--rule);
+}
+.section-title.light{border-bottom-color:rgba(220,201,166,.3);}
+
+.roles{padding:64px 0;border-top:1px solid var(--rule);}
+
+.roles-list{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:repeat(2,1fr);
+  gap:0 48px;
+}
+.roles-list li{
+  padding:16px 0;
+  border-bottom:1px solid var(--rule);
+  font-size:17px;
+}
+.role-label{
+  display:inline-block;
+  min-width:62px;
+  font-size:11px;letter-spacing:1.5px;
+  color:var(--gold);
+  vertical-align:middle;
+}
+.year{color:var(--navy-soft);font-size:15px;}
+
+/* ---------- الأقسام ---------- */
+
+.sections{padding:64px 0;}
+
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:20px;
+}
+
+.card{
+  background:var(--paper);
+  border:1px solid var(--rule);
+  padding:30px 24px 26px;
+  display:flex;flex-direction:column;
+  transition:transform .2s, border-color .2s;
+}
+.card:hover{transform:translateY(-3px);border-color:var(--gold-pale);}
+.card h3{
+  font-family:var(--display);
+  font-size:22px;margin:0 0 10px;font-weight:700;
+}
+.card p{
+  margin:0 0 22px;font-size:15px;color:var(--navy-soft);flex:1;
+}
+.card-go{
+  font-size:13px;color:var(--gold);letter-spacing:1px;
+}
+
+/* ---------- اسمٌ باقٍ ---------- */
+
+.legacy{
+  background:var(--navy);
+  color:var(--ivory);
+  padding:64px 0;
+}
+.legacy .section-title{color:var(--ivory);}
+.legacy-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:36px;
+}
+.legacy-grid h3{
+  font-family:var(--display);font-size:20px;margin:0 0 6px;font-weight:700;
+}
+.legacy-grid p{margin:0;color:var(--gold-pale);font-size:15px;}
+
+/* ---------- التذييل ---------- */
+
+.site-footer{
+  padding:46px 0;
+  border-top:1px solid var(--rule);
+}
+.footer-name{
+  font-family:var(--display);font-size:18px;margin:0 0 10px;
+}
+.footer-rights{
+  margin:0;font-size:13px;color:#8C8375;max-width:70ch;line-height:1.8;
+}
+
+/* ---------- الشاشات الصغيرة ---------- */
+
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:40px;}
+  .portrait{max-width:340px;margin-inline:auto;}
+  .roles-list{grid-template-columns:1fr;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .legacy-grid{grid-template-columns:1fr;gap:26px;}
+
+  .nav-toggle{display:block;}
+  .nav{
+    display:none;
+    position:absolute;inset-inline:0;top:100%;
+    background:var(--ivory);
+    border-bottom:1px solid var(--rule);
+    flex-direction:column;gap:0;padding:8px 24px 20px;
+  }
+  .nav.open{display:flex;}
+  .nav a{padding:12px 0;border-bottom:1px solid var(--rule);}
+  .header-inner{position:relative;}
+}
+
+@media (max-width:560px){
+  .cards{grid-template-columns:1fr;}
+  body{font-size:16px;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none !important;animation:none !important;}
+  html{scroll-behavior:auto;}
+}
