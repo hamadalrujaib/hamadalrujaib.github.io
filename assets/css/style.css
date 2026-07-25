@@ -281,7 +281,197 @@ a{color:inherit;text-decoration:none;}
   .cards{grid-template-columns:1fr;}
   body{font-size:16px;}
 }
+/* ===== أضِف هذا في نهاية assets/css/style.css ===== */
 
+/* تحسينات الصفحة الرئيسية */
+.card-go::after{
+  content:" ←";
+  display:inline-block;
+  transition:transform .2s;
+}
+.card:hover .card-go::after{transform:translateX(-4px);}
+
+.legacy-grid p{color:#D9CFBC;}
+.legacy-grid > div{
+  padding-inline-start:18px;
+  border-inline-start:1px solid rgba(220,201,166,.25);
+}
+
+/* ترتيب قائمة المواقع عمودياً */
+.roles-list{
+  grid-template-rows:repeat(5,minmax(64px,auto));
+  grid-auto-flow:column;
+  gap:0 56px;
+}
+.roles-list li{display:flex;align-items:center;gap:6px;}
+.role-label{min-width:66px;font-size:12px;letter-spacing:1px;}
+
+/* ===== صفحات المحتوى ===== */
+
+.page-head{
+  padding:64px 0 40px;
+  border-bottom:1px solid var(--rule);
+  margin-bottom:48px;
+}
+.page-head h1{
+  font-family:var(--display);
+  font-size:clamp(32px,4.5vw,48px);
+  margin:0 0 10px;
+  font-weight:700;
+  line-height:1.35;
+}
+.page-dates{
+  margin:0;
+  color:var(--gold);
+  font-size:17px;
+  letter-spacing:2px;
+}
+
+.article-layout{
+  display:grid;
+  grid-template-columns:250px 1fr;
+  gap:60px;
+  align-items:start;
+  padding-bottom:80px;
+}
+
+/* فهرس جانبي */
+.toc{
+  position:sticky;
+  top:110px;
+  border-inline-start:1px solid var(--rule);
+  padding-inline-start:20px;
+}
+.toc-title{
+  margin:0 0 14px;
+  font-size:12px;
+  letter-spacing:2px;
+  color:var(--gold);
+}
+.toc ol{
+  list-style:none;
+  margin:0;padding:0;
+  counter-reset:toc;
+}
+.toc li{counter-increment:toc;margin-bottom:11px;}
+.toc a{
+  font-size:14px;
+  color:var(--navy-soft);
+  line-height:1.6;
+  transition:color .2s;
+}
+.toc a::before{
+  content:counter(toc,decimal-leading-zero);
+  color:var(--gold-pale);
+  font-size:11px;
+  margin-inline-end:8px;
+}
+.toc a:hover{color:var(--navy);}
+
+/* نص المقالة */
+.article{max-width:70ch;}
+
+.article .intro{
+  font-size:20px;
+  line-height:2;
+  color:var(--navy);
+  margin:0 0 44px;
+  padding-inline-start:20px;
+  border-inline-start:2px solid var(--gold);
+}
+
+.article section{margin-bottom:46px;}
+
+.article h2{
+  font-family:var(--display);
+  font-size:27px;
+  font-weight:700;
+  margin:0 0 18px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--rule);
+  scroll-margin-top:110px;
+}
+.article h3{
+  font-family:var(--display);
+  font-size:20px;
+  font-weight:700;
+  margin:28px 0 12px;
+}
+.article p{
+  margin:0 0 18px;
+  color:#2A3E52;
+}
+.article em{font-style:normal;color:var(--gold);}
+.article strong{font-weight:600;}
+
+.article blockquote{
+  margin:28px 0;
+  padding:22px 26px;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-inline-start:3px solid var(--gold);
+  font-family:var(--display);
+  font-size:21px;
+  line-height:1.9;
+  color:var(--navy);
+}
+
+.works-list{
+  list-style:none;
+  margin:0 0 18px;
+  padding:0;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:0 24px;
+}
+.works-list li{
+  padding:11px 0;
+  border-bottom:1px solid var(--rule);
+  font-size:16px;
+}
+.works-list li::before{
+  content:"—";
+  color:var(--gold-pale);
+  margin-inline-end:10px;
+}
+
+.inline-link{
+  color:var(--gold);
+  border-bottom:1px solid var(--gold-pale);
+}
+.inline-link:hover{border-bottom-color:var(--gold);}
+
+.source-note{
+  margin-top:52px;
+  padding:18px 22px;
+  background:rgba(220,201,166,.14);
+  border-inline-start:2px solid var(--gold-pale);
+  font-size:14px;
+  color:#6E6558;
+  line-height:1.8;
+}
+
+@media (max-width:900px){
+  .article-layout{grid-template-columns:1fr;gap:36px;}
+  .toc{
+    position:static;
+    border-inline-start:none;
+    border-bottom:1px solid var(--rule);
+    padding:0 0 22px;
+  }
+  .toc ol{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0 20px;
+  }
+  .article .intro{font-size:18px;}
+  .works-list{grid-template-columns:1fr;}
+}
+
+@media (max-width:560px){
+  .toc ol{grid-template-columns:1fr;}
+  .article blockquote{font-size:19px;padding:18px 20px;}
+}
 @media (prefers-reduced-motion:reduce){
   *{transition:none !important;animation:none !important;}
   html{scroll-behavior:auto;}
