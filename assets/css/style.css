@@ -1008,3 +1008,13 @@ a{color:inherit;text-decoration:none;}
   .contact-links{flex-direction:column;align-items:stretch;}
   .contact-btn{justify-content:center;}
 }
+/* ===== لقب الصفحة الرئيسية ===== */
+.hero .eyebrow{
+  font-family:var(--display);
+  font-size:clamp(20px,2.6vw,28px);
+  font-weight:700;
+  color:var(--gold);
+  letter-spacing:normal;
+  margin:0 0 6px;
+  line-height:1.5;
+}
