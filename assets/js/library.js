@@ -65,8 +65,10 @@
     if (x.url) {
       var a = document.createElement('a');
       a.href = x.url;
-      a.target = '_blank';
-      a.rel = 'noopener';
+      if (/^https?:/i.test(x.url)) {
+        a.target = '_blank';
+        a.rel = 'noopener';
+      }
       a.textContent = x.title;
       h.appendChild(a);
     } else {
