@@ -8,6 +8,11 @@
     ministry: 'الوزارة'
   };
 
+  var IMG_DIR = 'assets/img/';
+
+  function fullSrc(p) { return IMG_DIR + p.file; }
+  function thumbSrc(p) { return IMG_DIR + 'thumb-' + p.file; }
+
   var grid = document.getElementById('grid');
   if (!grid) return;
 
@@ -19,6 +24,7 @@
   var photos = [];
   var visible = [];
   var current = 0;
+  var loadToken = 0;
 
   fetch('data/photos.json')
     .then(function (r) {
@@ -59,9 +65,15 @@
       fig.setAttribute('role', 'button');
 
       var img = document.createElement('img');
-      img.src = 'assets/img/' + p.file;
+      img.src = thumbSrc(p);
       img.alt = altText(p);
       img.loading = 'lazy';
+      img.decoding = 'async';
+      // احتياط: إن غاب المصغّر تُعرض الصورة الكاملة بدل مربع مكسور
+      img.addEventListener('error', function onErr() {
+        img.removeEventListener('error', onErr);
+        img.src = fullSrc(p);
+      });
 
       var cap = document.createElement('figcaption');
       var meta = '';
@@ -91,8 +103,24 @@
   function show() {
     var p = visible[current];
     if (!p) return;
-    lbImg.src = 'assets/img/' + p.file;
+
+    // يُعرض المصغّر فوراً (مخزَّن أصلاً)، ثم تحلّ محلّه الصورة الكاملة عند اكتمال تحميلها
+    var token = ++loadToken;
     lbImg.alt = altText(p);
+    lbImg.src = thumbSrc(p);
+    lbImg.classList.add('is-loading');
+
+    var full = new Image();
+    full.onload = function () {
+      if (token !== loadToken) return;
+      lbImg.src = full.src;
+      lbImg.classList.remove('is-loading');
+    };
+    full.onerror = function () {
+      if (token !== loadToken) return;
+      lbImg.classList.remove('is-loading');
+    };
+    full.src = fullSrc(p);
 
     var html = '';
     if (p.caption) html += '<span class="lb-text">' + p.caption + '</span>';
@@ -106,8 +134,10 @@
   }
 
   function close() {
+    loadToken++;
     lightbox.hidden = true;
     lbImg.src = '';
+    lbImg.classList.remove('is-loading');
     document.body.style.overflow = '';
   }
 
