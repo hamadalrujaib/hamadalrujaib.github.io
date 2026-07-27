@@ -62,7 +62,15 @@
 
     var h = document.createElement('h3');
     h.className = 'lib-title';
-    h.textContent = x.title;
+    if (x.url) {
+      var a = document.createElement('a');
+      a.href = x.url;
+      if (/^https?:/i.test(x.url)) { a.target = '_blank'; a.rel = 'noopener'; }
+      a.textContent = x.title;
+      h.appendChild(a);
+    } else {
+      h.textContent = x.title;
+    }
     el.appendChild(h);
 
     if (x.subtitle) {
@@ -116,6 +124,16 @@
         box.appendChild(fig);
       });
       el.appendChild(box);
+    }
+
+    if (x.url) {
+      var read = document.createElement('p');
+      read.className = 'work-read';
+      var ra = document.createElement('a');
+      ra.href = x.url;
+      ra.textContent = 'اقرأ النص كاملاً';
+      read.appendChild(ra);
+      el.appendChild(read);
     }
 
     var src = document.createElement('p');
