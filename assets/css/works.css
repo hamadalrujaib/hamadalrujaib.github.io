@@ -87,3 +87,15 @@
   cursor: pointer;
 }
 .doc-lb-close:hover { background: rgba(255,255,255,.22); }
+
+.work-read { margin: .9rem 0 0; font-size: .92rem; }
+.work-read a {
+  display: inline-block;
+  padding: .45rem .95rem;
+  color: #fff;
+  background: #14263B;
+  border-radius: 3px;
+  text-decoration: none;
+  transition: background .15s ease;
+}
+.work-read a:hover { background: #1E3A5C; }
