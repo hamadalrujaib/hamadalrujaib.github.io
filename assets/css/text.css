@@ -1,1 +1,117 @@
+/* صفحات النصوص — أرشيف حمد عيسى الرجيب */
 
+.tx-back { margin: 1.5rem 0 1.25rem; font-size: .95rem; }
+.tx-back a { color: var(--gold, #A8894B); text-decoration: none; }
+.tx-back a:hover { text-decoration: underline; }
+
+/* الأشخاص */
+.tx-chars {
+  margin: 0 0 2.25rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+.tx-chars h2 {
+  margin: 0 0 1rem;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--gold, #A8894B);
+}
+.tx-chars dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: .85rem 2rem;
+  margin: 0;
+}
+.tx-chars dt { font-weight: 600; font-size: 1rem; margin-bottom: .15rem; }
+.tx-chars dd { margin: 0; font-size: .9rem; color: #5A5349; }
+
+/* متن المسرحية */
+.tx-body {
+  max-width: 68ch;
+  margin: 0 auto;
+  font-size: 1.06rem;
+  line-height: 2.15;
+}
+.tx-body .line {
+  margin: 0 0 1.2rem;
+  text-indent: 0;
+  unicode-bidi: plaintext;
+}
+.tx-body .who {
+  font-weight: 600;
+  color: #14263B;
+  white-space: nowrap;
+}
+.tx-body .said {
+  unicode-bidi: plaintext;
+}
+.tx-body .dir {
+  font-style: normal;
+  font-weight: 400;
+  font-size: .9em;
+  color: #8A8175;
+}
+.tx-body .stage {
+  unicode-bidi: plaintext;
+  margin: 1.75rem 0;
+  padding-inline-start: .9rem;
+  border-inline-start: 2px solid rgba(168,137,75,.4);
+  font-size: .97rem;
+  color: #6B645A;
+}
+.tx-sign {
+  margin: 2.5rem 0 0;
+  text-align: end;
+  font-family: 'Amiri', serif;
+  font-size: 1.25rem;
+  color: #14263B;
+}
+
+/* المشاركة */
+.tx-share {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .75rem 1rem;
+  margin: 3rem 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(0,0,0,.09);
+}
+.tx-share-label {
+  font-size: .8rem;
+  letter-spacing: .02em;
+  color: var(--gold, #A8894B);
+}
+.tx-share-btns { display: flex; flex-wrap: wrap; gap: .5rem; }
+
+.sh {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  padding: .5rem .9rem;
+  font: inherit;
+  font-size: .85rem;
+  line-height: 1;
+  color: #3A342C;
+  background: #FBFAF7;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 999px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color .15s ease, border-color .15s ease, background .15s ease;
+}
+.sh svg { width: 16px; height: 16px; flex: none; }
+.sh:hover { background: #fff; border-color: currentColor; }
+.sh-native:hover { color: #14263B; }
+.sh-wa:hover     { color: #1D7A4C; }
+.sh-x:hover      { color: #14110E; }
+.sh-copy:hover   { color: #A8894B; }
+.sh.is-done { color: #3F6B4A; border-color: #3F6B4A; background: #fff; }
+
+@media (max-width: 560px) {
+  .tx-chars { padding: 1.25rem; }
+  .tx-body { font-size: 1.02rem; line-height: 2.05; }
+}
