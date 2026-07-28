@@ -24,6 +24,29 @@
 <meta property="og:description" content="قصة العدد — كتبها حمد عيسى الرجيب وفهد الدويري، ونشرتها مجلة البعثة مسابقةً للقرّاء، يونيو ١٩٤٩.">
 <meta property="og:image" content="https://hamadalrujaib.org/assets/img/share.jpg">
 <meta name="twitter:card" content="summary_large_image">
+  <style>
+  .st-scans { margin: 2.6rem auto 0; max-width: 62ch; }
+  .st-scans > h2 {
+    font-family: "Amiri", serif; font-size: 1.28rem; font-weight: 700;
+    margin: 0 0 1.1rem; color: #2E2A24;
+  }
+  .st-scans-grid {
+    display: grid; gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .st-scans .tx-scan-item { margin: 0; cursor: zoom-in; text-align: center; }
+  .st-scans .tx-scan-item img {
+    width: 100%; height: auto; display: block;
+    background: #fff; border: 1px solid rgba(0,0,0,.14); border-radius: 3px;
+    transition: border-color .15s ease;
+  }
+  .st-scans .tx-scan-item:hover img,
+  .st-scans .tx-scan-item:focus-visible img { border-color: #A8894B; outline: none; }
+  .st-scans .tx-scan-item figcaption {
+    margin-top: .5rem; font-size: .82rem; color: #8A8175;
+  }
+  .st-scans .tx-scan-note { margin: 1rem 0 0; font-size: .84rem; color: #8A8175; }
+</style>
 </head>
 <body>
 
@@ -133,7 +156,42 @@
         </div>
       </details>
     </section>
+<section class="st-scans" aria-labelledby="scans-h">
+      <h2 id="scans-h">الصفحات الأصلية</h2>
+      <div class="st-scans-grid">
 
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ١٩٥"
+                data-full="../assets/img/doc-thalam-01.jpg"
+                data-cap="مجلة البعثة — العدد السادس، يونيو ١٩٤٩، ص ١٩٥ من المجلد. صدر القصة، وفي أعلاها شعار «قصة العدد».">
+          <img src="../assets/img/thumb-doc-thalam-01.jpg" loading="lazy" decoding="async"
+               alt="صفحة ١٩٥ من مجلة البعثة، صدر قصة ظلام">
+          <figcaption>ص ١٩٥</figcaption>
+        </figure>
+
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ١٩٦"
+                data-full="../assets/img/doc-thalam-02.jpg"
+                data-cap="مجلة البعثة — العدد السادس، يونيو ١٩٤٩، ص ١٩٦ من المجلد.">
+          <img src="../assets/img/thumb-doc-thalam-02.jpg" loading="lazy" decoding="async"
+               alt="صفحة ١٩٦ من مجلة البعثة، تتمة قصة ظلام">
+          <figcaption>ص ١٩٦</figcaption>
+        </figure>
+
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ١٩٧"
+                data-full="../assets/img/doc-thalam-03.jpg"
+                data-cap="مجلة البعثة — العدد السادس، يونيو ١٩٤٩، ص ١٩٧ من المجلد. تنتهي القصة في أعلى الصفحة، ويليها مقال آخر.">
+          <img src="../assets/img/thumb-doc-thalam-03.jpg" loading="lazy" decoding="async"
+               alt="صفحة ١٩٧ من مجلة البعثة، خاتمة قصة ظلام">
+          <figcaption>ص ١٩٧</figcaption>
+        </figure>
+
+      </div>
+      <p class="tx-scan-note">
+        الصفحات كما نُشرت في مجلة البعثة، العدد السادس من السنة الثالثة، يونيو ١٩٤٩. اضغط أي صفحة لتكبيرها.
+      </p>
+    </section>
     <div class="tx-share" data-url="https://hamadalrujaib.org/works/thalam.html" data-title="ظلام… — حمد عيسى الرجيب">
       <span class="tx-share-label">مشاركة</span>
       <div class="tx-share-btns">
@@ -278,5 +336,31 @@
   }
 })();
 </script>
+  })();
+</script>
+
+<script>
+(function () {
+  var lb = document.getElementById('clip-lb');
+  if (!lb) return;
+  var img = lb.querySelector('img'), cap = lb.querySelector('.doc-lb-cap');
+  Array.prototype.forEach.call(document.querySelectorAll('.st-scan'), function (fig) {
+    var open = function () {
+      img.src = fig.dataset.full;
+      img.alt = fig.querySelector('img').alt;
+      cap.textContent = fig.dataset.cap;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+    fig.addEventListener('click', open);
+    fig.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
 </body>
 </html>
