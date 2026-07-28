@@ -115,3 +115,199 @@
   .tx-chars { padding: 1.25rem; }
   .tx-body { font-size: 1.02rem; line-height: 2.05; }
 }
+
+/* ══ صفحة القصة ══ */
+.st-intro {
+  margin: 0 0 2.5rem;
+  padding: 1.5rem;
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+.st-intro h2 {
+  margin: 0 0 .9rem;
+  font-size: .82rem;
+  font-weight: 500;
+  letter-spacing: .04em;
+  color: var(--gold, #A8894B);
+}
+.st-intro > p { margin: 0 0 .75rem; font-size: .95rem; color: #5A5349; }
+.st-intro blockquote {
+  margin: 0;
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid rgba(168,137,75,.45);
+}
+.st-intro blockquote p {
+  margin: 0 0 .6rem;
+  font-size: 1rem;
+  line-height: 1.95;
+}
+.st-intro blockquote p:last-child { margin-bottom: 0; }
+.st-hint {
+  margin: 1rem 0 0 !important;
+  padding-top: .9rem;
+  border-top: 1px solid rgba(0,0,0,.06);
+  font-size: .87rem !important;
+  color: #8A8175 !important;
+}
+
+.st-body .st-p {
+  margin: 0 0 1.3rem;
+  text-align: justify;
+  unicode-bidi: plaintext;
+}
+.st-body .st-p:first-child::first-letter {
+  font-family: 'Amiri', serif;
+  font-size: 2.4em;
+  line-height: .9;
+  float: right;
+  margin-inline-start: .12em;
+  color: #14263B;
+}
+/* التمييز لا يظهر إلا بعد كشف الحلّ */
+.st-body.is-marked .st-a {
+  border-inline-start: 3px solid rgba(20,38,59,.35);
+  padding-inline-start: .9rem;
+}
+.st-body.is-marked .st-b {
+  border-inline-start: 3px solid rgba(168,137,75,.55);
+  padding-inline-start: .9rem;
+}
+.st-seam {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  margin: 2rem 0;
+  color: var(--gold, #A8894B);
+  font-size: .82rem;
+  letter-spacing: .03em;
+}
+.st-seam[hidden] { display: none; }
+.st-seam::before, .st-seam::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(168,137,75,.4);
+}
+
+.st-answer { margin: 3rem 0 0; }
+.st-answer details {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 4px;
+}
+.st-answer summary {
+  padding: 1.1rem 1.5rem;
+  font-size: .95rem;
+  font-weight: 500;
+  color: #14263B;
+  cursor: pointer;
+  list-style: none;
+}
+.st-answer summary::-webkit-details-marker { display: none; }
+.st-answer summary::before {
+  content: '▸';
+  margin-inline-end: .5rem;
+  color: var(--gold, #A8894B);
+  display: inline-block;
+  transition: transform .18s ease;
+}
+.st-answer details[open] summary::before { transform: rotate(-90deg); }
+.st-answer-in {
+  padding: 0 1.5rem 1.5rem;
+  border-top: 1px solid rgba(0,0,0,.06);
+  padding-top: 1.25rem;
+}
+.st-answer-in p { margin: 0 0 .9rem; font-size: .96rem; line-height: 1.95; }
+.st-answer-in blockquote {
+  margin: 0 0 1.25rem;
+  padding-inline-start: 1rem;
+  border-inline-start: 2px solid rgba(168,137,75,.45);
+}
+.st-answer-in blockquote p { margin: 0 0 .5rem; }
+
+.st-clip {
+  margin: 1.25rem 0;
+  cursor: pointer;
+  max-width: 460px;
+}
+.st-clip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(0,0,0,.12);
+  border-radius: 3px;
+  transition: border-color .15s ease;
+}
+.st-clip:hover img, .st-clip:focus-visible img {
+  border-color: var(--gold, #A8894B);
+  outline: none;
+}
+.st-clip figcaption {
+  margin-top: .55rem;
+  font-size: .82rem;
+  line-height: 1.75;
+  color: #8A8175;
+}
+
+.st-mark { margin: 1.25rem 0 0 !important; }
+.st-mark-btn {
+  padding: .55rem 1.1rem;
+  font: inherit;
+  font-size: .88rem;
+  color: #fff;
+  background: #14263B;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background .15s ease;
+}
+.st-mark-btn:hover { background: #1E3A5C; }
+
+/* عارض القصاصة */
+.doc-lb {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(20,17,14,.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1rem 1rem;
+  overflow: auto;
+}
+.doc-lb[hidden] { display: none; }
+.doc-lb-inner { max-width: 1000px; text-align: center; }
+.doc-lb-inner img {
+  max-width: 100%;
+  max-height: 78vh;
+  height: auto;
+  border-radius: 3px;
+  background: #fff;
+}
+.doc-lb-cap {
+  margin: 1rem auto 0;
+  max-width: 70ch;
+  font-size: .88rem;
+  line-height: 1.9;
+  color: #E8E2D8;
+}
+.doc-lb-close {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: 40px; height: 40px;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #fff;
+  background: rgba(255,255,255,.12);
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.doc-lb-close:hover { background: rgba(255,255,255,.22); }
+
+@media (max-width: 560px) {
+  .st-intro, .st-answer-in { padding-inline: 1.25rem; }
+  .st-body .st-p { text-align: start; }
+}
