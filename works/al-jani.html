@@ -14,7 +14,7 @@
 <link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icon-180.png">
 <meta name="theme-color" content="#F7F4EE">
 <link rel="stylesheet" href="../assets/css/style.css?v=11">
-<link rel="stylesheet" href="../assets/css/text.css?v=3">
+<link rel="stylesheet" href="../assets/css/text.css?v=4">
 <link rel="canonical" href="https://hamadalrujaib.org/works/al-jani.html">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="أرشيف حمد عيسى الرجيب">
@@ -150,6 +150,25 @@
       <p class="tx-sign">حمد رجيب</p>
     </article>
 
+    <section class="tx-scan">
+      <h2>الصفحتان الأصليتان</h2>
+      <div class="tx-scan-grid">
+        <figure class="tx-scan-item" tabindex="0" role="button"
+                data-full="../assets/img/doc-aljani-01.jpg"
+                data-cap="مجلة البعثة — العدد السادس، مايو ١٩٤٧، ص ١١٤ من المجلد.">
+          <img src="../assets/img/thumb-doc-aljani-01.jpg" alt="الصفحة ١١٤ من مجلة البعثة" loading="lazy" decoding="async">
+          <figcaption>ص ١١٤</figcaption>
+        </figure>
+        <figure class="tx-scan-item" tabindex="0" role="button"
+                data-full="../assets/img/doc-aljani-02.jpg"
+                data-cap="مجلة البعثة — العدد السادس، مايو ١٩٤٧، ص ١١٥ من المجلد، وفي ذيلها توقيع «حمد رجيب».">
+          <img src="../assets/img/thumb-doc-aljani-02.jpg" alt="الصفحة ١١٥ من مجلة البعثة" loading="lazy" decoding="async">
+          <figcaption>ص ١١٥</figcaption>
+        </figure>
+      </div>
+      <p class="tx-scan-note">اضغط على أي صفحة لتكبيرها.</p>
+    </section>
+
     <div class="tx-share" data-url="https://hamadalrujaib.org/works/al-jani.html" data-title="من الجاني؟.. — حمد عيسى الرجيب">
       <span class="tx-share-label">مشاركة</span>
       <div class="tx-share-btns">
@@ -220,6 +239,14 @@
 </footer>
 
 <script src="../assets/js/main.js"></script>
+<div class="doc-lb" id="scan-lb" hidden>
+  <button class="doc-lb-close" type="button" aria-label="إغلاق">&#215;</button>
+  <div class="doc-lb-inner">
+    <img src="" alt="">
+    <p class="doc-lb-cap"></p>
+  </div>
+</div>
+
 <script>
 (function () {
   var box = document.querySelector('.tx-share');
@@ -243,6 +270,28 @@
     var nat = box.querySelector('.sh-native');
     nat.hidden = false;
     nat.addEventListener('click', function () { navigator.share({ title: title, url: url }).catch(function(){}); });
+  }
+  /* تكبير صفحات المجلة */
+  var lb = document.getElementById('scan-lb');
+  if (lb) {
+    var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('.doc-lb-cap');
+    var close = function () { lb.hidden = true; lbImg.src = ''; document.body.style.overflow = ''; };
+    Array.prototype.forEach.call(document.querySelectorAll('.tx-scan-item'), function (fig) {
+      var open = function () {
+        lbImg.src = fig.dataset.full;
+        lbImg.alt = fig.querySelector('img').alt;
+        lbCap.textContent = fig.dataset.cap;
+        lb.hidden = false;
+        document.body.style.overflow = 'hidden';
+      };
+      fig.addEventListener('click', open);
+      fig.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+      });
+    });
+    lb.querySelector('.doc-lb-close').addEventListener('click', close);
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) { if (!lb.hidden && e.key === 'Escape') close(); });
   }
 })();
 </script>
