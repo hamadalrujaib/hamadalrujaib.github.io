@@ -6,11 +6,12 @@
   var items   = [];
   var current = 'all';
 
-  var CAT_ORDER = ['book', 'thesis', 'article', 'interview', 'video'];
+  var CAT_ORDER = ['book', 'thesis', 'article', 'eulogy', 'interview', 'video'];
   var CAT_LABEL = {
     book: 'كتب',
     thesis: 'رسائل جامعية',
     article: 'مقالات عنه',
+    eulogy: 'رثاء',
     interview: 'حوارات معه',
     video: 'وثائقيات ومرئيات'
   };
