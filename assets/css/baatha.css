@@ -1,0 +1,165 @@
+/* ===== صفحة مجلة البعثة ===== */
+
+.bth-intro{
+  max-width: 46rem;
+  margin: 0 0 2rem;
+  line-height: 2;
+  color: #3B4754;
+  font-size: .98rem;
+}
+
+.filters-sub{
+  margin-top: -.5rem;
+}
+
+/* ===== المجموعات ===== */
+
+.bth-group{
+  margin: 2.5rem 0 0;
+}
+
+.bth-group-head{
+  display: flex;
+  align-items: baseline;
+  gap: .75rem;
+  padding-bottom: .6rem;
+  border-bottom: 1px solid rgba(166,124,61,.28);
+  margin-bottom: .25rem;
+}
+
+.bth-group-title{
+  font-family: "Amiri", serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #16283A;
+  margin: 0;
+}
+
+.bth-group-year{
+  font-size: .82rem;
+  color: #A67C3D;
+  letter-spacing: .02em;
+}
+
+.bth-group-count{
+  margin-inline-start: auto;
+  font-size: .78rem;
+  color: #8A939C;
+}
+
+/* ===== المدخل ===== */
+
+.bth-item{
+  display: grid;
+  grid-template-columns: 7.5rem 1fr;
+  gap: 0 1.25rem;
+  padding: 1.05rem 0;
+  border-bottom: 1px solid rgba(22,40,58,.07);
+}
+
+.bth-item:last-child{ border-bottom: 0; }
+
+.bth-ref{
+  font-size: .78rem;
+  line-height: 1.9;
+  color: #6B7681;
+  padding-top: .15rem;
+}
+
+.bth-ref .bth-issue{ display: block; }
+
+.bth-ref .bth-page{
+  display: block;
+  color: #A67C3D;
+  font-variant-numeric: tabular-nums;
+}
+
+.bth-body{ min-width: 0; }
+
+.bth-title{
+  font-family: "Amiri", serif;
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: #16283A;
+  margin: 0 0 .3rem;
+  line-height: 1.6;
+}
+
+.bth-desc{
+  margin: 0;
+  font-size: .9rem;
+  line-height: 1.95;
+  color: #4A5560;
+}
+
+.bth-type{
+  display: inline-block;
+  font-size: .7rem;
+  line-height: 1;
+  padding: .32em .7em;
+  border: 1px solid rgba(166,124,61,.4);
+  border-radius: 2px;
+  color: #A67C3D;
+  margin-inline-start: .5rem;
+  vertical-align: .18em;
+  white-space: nowrap;
+}
+
+.bth-note{
+  margin: .55rem 0 0;
+  font-size: .78rem;
+  line-height: 1.85;
+  color: #8A6A3A;
+  background: rgba(166,124,61,.07);
+  border-inline-start: 2px solid rgba(166,124,61,.45);
+  padding: .5rem .75rem;
+}
+
+.bth-note::before{
+  content: "تحفّظ — ";
+  font-weight: 600;
+}
+
+/* ===== الجوال ===== */
+
+@media (max-width: 620px){
+  .bth-item{
+    grid-template-columns: 1fr;
+    gap: .35rem;
+    padding: 1rem 0;
+  }
+  .bth-ref{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 .6rem;
+    padding-top: 0;
+  }
+  .bth-ref .bth-issue,
+  .bth-ref .bth-page{ display: inline; }
+  .bth-title{ font-size: 1.06rem; }
+  .bth-group-count{ display: none; }
+}
+
+/* ===== الإحالة إلى المادة المنشورة ===== */
+
+.bth-link{
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(166,124,61,.45);
+  transition: color .2s ease, border-color .2s ease;
+}
+
+.bth-link:hover,
+.bth-link:focus-visible{
+  color: #A67C3D;
+  border-bottom-color: #A67C3D;
+}
+
+.bth-link::after{
+  content: "↗";
+  font-size: .68em;
+  color: #A67C3D;
+  margin-inline-start: .28em;
+  vertical-align: .32em;
+  border: 0;
+}
