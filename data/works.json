@@ -1,5 +1,6 @@
 [
   {
+    "id": "al-jani",
     "kind": "play",
     "title": "من الجاني؟..",
     "subtitle": "تمثيلية من فصل واحد",
@@ -21,6 +22,7 @@
     "url": "works/al-jani.html"
   },
   {
+    "id": "mahzala",
     "kind": "play",
     "title": "مهزلة في مهزلة",
     "subtitle": "رواية شعرية هزلية للمسرح المدرسي — وضع فكرتها حمد الرجيب، ونظمها شعراً أحمد مشاري العدواني",
@@ -33,6 +35,7 @@
     "url": ""
   },
   {
+    "id": "kharouf",
     "kind": "play",
     "title": "خروف نيام.. نيام",
     "subtitle": "مسرحية في ثلاثة فصول",
@@ -45,6 +48,7 @@
     "url": ""
   },
   {
+    "id": "aroos-alzunooj",
     "kind": "play",
     "title": "عروس الزنوج (أو آكلو لحوم البشر)",
     "subtitle": "مسرحية وضعها وأخرجها لمعسكر كشافة الكويت السنوي",
@@ -57,6 +61,7 @@
     "url": ""
   },
   {
+    "id": "wafa",
     "kind": "play",
     "title": "وفاء",
     "subtitle": "مسرحية من تأليفه، سُمّيت باسم ابنته الكبرى وفاء",
@@ -78,6 +83,7 @@
     "url": ""
   },
   {
+    "id": "thalam",
     "kind": "story",
     "title": "ظلام",
     "subtitle": "قصة مشتركة — بدأها حمد الرجيب وأتمّها فهد الدويري",
@@ -103,6 +109,7 @@
     "url": "works/thalam.html"
   },
   {
+    "id": "masat-dajaja",
     "kind": "article",
     "title": "مأساة دجاجة",
     "subtitle": "",
@@ -115,6 +122,7 @@
     "url": ""
   },
   {
+    "id": "almasrah-wa-atharuh",
     "kind": "article",
     "title": "المسرح وأثره في المجتمع",
     "subtitle": "",
@@ -127,6 +135,7 @@
     "url": ""
   },
   {
+    "id": "nashaat-almasrah",
     "kind": "article",
     "title": "نشأة المسرح",
     "subtitle": "",
@@ -139,6 +148,7 @@
     "url": ""
   },
   {
+    "id": "salamat",
     "kind": "article",
     "title": "سلامات!..",
     "subtitle": "",
@@ -151,6 +161,7 @@
     "url": ""
   },
   {
+    "id": "alriyada-albadaniya",
     "kind": "article",
     "title": "الرياضة البدنية",
     "subtitle": "",
@@ -163,6 +174,7 @@
     "url": ""
   },
   {
+    "id": "hadatha-li-almasrah",
     "kind": "article",
     "title": "حدث لي على المسرح",
     "subtitle": "",
@@ -175,6 +187,7 @@
     "url": ""
   },
   {
+    "id": "haolaa-alnas-1",
     "kind": "article",
     "title": "هؤلاء الناس",
     "subtitle": "",
@@ -187,6 +200,7 @@
     "url": ""
   },
   {
+    "id": "laytani-kuntu-arabiyan",
     "kind": "article",
     "title": "ليتني كنت عربياً",
     "subtitle": "",
@@ -199,6 +213,7 @@
     "url": ""
   },
   {
+    "id": "haolaa-alnas-2",
     "kind": "article",
     "title": "هؤلاء الناس",
     "subtitle": "",
@@ -211,6 +226,7 @@
     "url": ""
   },
   {
+    "id": "haolaa-alnas-3",
     "kind": "article",
     "title": "هؤلاء الناس",
     "subtitle": "",
@@ -223,6 +239,7 @@
     "url": ""
   },
   {
+    "id": "haolaa-alnas-4",
     "kind": "article",
     "title": "هؤلاء الناس",
     "subtitle": "",
@@ -235,6 +252,7 @@
     "url": ""
   },
   {
+    "id": "aaqab-alsajayir",
     "kind": "article",
     "title": "أعقاب السجاير!",
     "subtitle": "",
