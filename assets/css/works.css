@@ -99,3 +99,8 @@
   transition: background .15s ease;
 }
 .work-read a:hover { background: #1E3A5C; }
+.work-item.is-targeted{
+  background: rgba(166,124,61,.09);
+  box-shadow: 0 0 0 .6rem rgba(166,124,61,.09);
+  transition: background .4s ease, box-shadow .4s ease;
+}
