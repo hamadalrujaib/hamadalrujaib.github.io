@@ -62,3 +62,14 @@
   .lib-item{padding:.9rem 1rem;}
   .lib-title{font-size:1.1rem;}
 }
+.lib-meta .meta-part + .meta-part::before{
+  content: "·";
+  color: #A67C3D;
+  margin: 0 .45em;
+}
+
+.lib-item.is-targeted{
+  background: rgba(166,124,61,.09);
+  box-shadow: 0 0 0 .6rem rgba(166,124,61,.09);
+  transition: background .4s ease, box-shadow .4s ease;
+}
