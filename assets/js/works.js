@@ -23,7 +23,7 @@
       if (!r.ok) throw new Error('HTTP ' + r.status);
       return r.json();
     })
-    .then(function (data) { items = data; render(); })
+    .then(function (data) { items = data; render(); goToHash(); })
     .catch(function () {
       listEl.innerHTML = '<p class="grid-status">تعذّر تحميل القائمة.</p>';
     });
@@ -59,6 +59,7 @@
   function build(x) {
     var el = document.createElement('article');
     el.className = 'lib-item work-item';
+    if (x.id) el.id = 'work-' + x.id;
 
     var h = document.createElement('h3');
     h.className = 'lib-title';
@@ -152,6 +153,30 @@
       render();
     });
   });
+
+
+  /* ── الوصول المباشر إلى عمل بعينه عبر #work-xxx ── */
+  function goToHash() {
+    var hash = window.location.hash;
+    if (!hash || hash.indexOf('#work-') !== 0) return;
+
+    if (current !== 'all') {
+      current = 'all';
+      Array.prototype.forEach.call(filters, function (b) {
+        b.classList.toggle('is-active', b.dataset.kind === 'all');
+      });
+      render();
+    }
+
+    var target = document.getElementById(hash.slice(1));
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.classList.add('is-targeted');
+    window.setTimeout(function () { target.classList.remove('is-targeted'); }, 2600);
+  }
+
+  window.addEventListener('hashchange', goToHash);
 
 
   /* ── عارض الوثائق ── */
