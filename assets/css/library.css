@@ -62,6 +62,7 @@
   .lib-item{padding:.9rem 1rem;}
   .lib-title{font-size:1.1rem;}
 }
+
 .lib-meta .meta-part + .meta-part::before{
   content: "·";
   color: #A67C3D;
