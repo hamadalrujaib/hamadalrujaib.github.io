@@ -24,6 +24,7 @@
     .then(function (data) {
       items = data;
       render();
+      goToHash();
     })
     .catch(function () {
       listEl.innerHTML = '<p class="grid-status">تعذّر تحميل القائمة.</p>';
@@ -60,6 +61,7 @@
   function buildItem(x) {
     var el = document.createElement('article');
     el.className = 'lib-item';
+    if (x.id) el.id = 'lib-' + x.id;
 
     var h = document.createElement('h3');
     h.className = 'lib-title';
@@ -77,6 +79,7 @@
     }
     el.appendChild(h);
 
+    /* كل جزء في عنصر <bdi> مستقل، ليمنع دمج الأرقام المتجاورة عبر الفاصل */
     var meta = [];
     if (x.author) meta.push(x.author);
     if (x.source) meta.push(x.source);
@@ -86,7 +89,12 @@
     if (meta.length) {
       var m = document.createElement('p');
       m.className = 'lib-meta';
-      m.textContent = meta.join(' · ');
+      meta.forEach(function (part) {
+        var b = document.createElement('bdi');
+        b.className = 'meta-part';
+        b.textContent = part;
+        m.appendChild(b);
+      });
       el.appendChild(m);
     }
 
@@ -111,12 +119,34 @@
     });
   });
 
+  /* ── الوصول المباشر إلى مادة بعينها عبر #lib-xxx ── */
+  function goToHash() {
+    var hash = window.location.hash;
+    if (!hash || hash.indexOf('#lib-') !== 0) return;
+
+    if (current !== 'all') {
+      current = 'all';
+      Array.prototype.forEach.call(filters, function (b) {
+        b.classList.toggle('is-active', b.dataset.cat === 'all');
+      });
+      render();
+    }
+
+    var target = document.getElementById(hash.slice(1));
+    if (!target) return;
+
+    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    target.classList.add('is-targeted');
+    window.setTimeout(function () { target.classList.remove('is-targeted'); }, 2600);
+  }
+
+  window.addEventListener('hashchange', goToHash);
+
   function arabicNum(n) {
     return String(n).replace(/\d/g, function (d) {
       return '٠١٢٣٤٥٦٧٨٩'[d];
     });
   }
-
   function countLabel(n) {
     if (n === 1) return 'مادة واحدة';
     if (n === 2) return 'مادتان';
