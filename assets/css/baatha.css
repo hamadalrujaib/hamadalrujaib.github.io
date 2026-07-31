@@ -154,12 +154,3 @@
   color: #A67C3D;
   border-bottom-color: #A67C3D;
 }
-
-.bth-link::after{
-  content: "↗";
-  font-size: .68em;
-  color: #A67C3D;
-  margin-inline-start: .28em;
-  vertical-align: .32em;
-  border: 0;
-}
