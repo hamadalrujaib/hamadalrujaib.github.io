@@ -1026,3 +1026,79 @@ a{color:inherit;text-decoration:none;}
   margin: 1.2rem 0 1.6rem;
   line-height: 1.9;
 }
+/* ===== مواقع تولّاها — مجالات ===== */
+
+.fields{
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2.4rem 3rem;
+  margin-top: 1.8rem;
+}
+
+.field:last-child{ grid-column: 1 / -1; }
+
+.field-title{
+  font-family: "Amiri", serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #A67C3D;
+  margin: 0 0 .7rem;
+  padding-bottom: .45rem;
+  border-bottom: 1px solid rgba(166,124,61,.28);
+  letter-spacing: .01em;
+}
+
+.field-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.field-list li{
+  position: relative;
+  padding: .55rem 0 .55rem 0;
+  padding-inline-start: 1rem;
+  font-size: .95rem;
+  line-height: 1.95;
+  color: #16283A;
+  border-bottom: 1px solid rgba(22,40,58,.06);
+}
+
+.field-list li:last-child{ border-bottom: 0; }
+
+.field-list li::before{
+  content: "";
+  position: absolute;
+  inset-inline-start: 0;
+  top: 1.35em;
+  width: .32rem;
+  height: .32rem;
+  border-radius: 50%;
+  background: rgba(166,124,61,.55);
+}
+
+.field-list .year{
+  display: block;
+  font-size: .78rem;
+  color: #8A939C;
+  margin-top: .1rem;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 760px){
+  .fields{
+    grid-template-columns: 1fr;
+    gap: 1.9rem;
+  }
+  .field:last-child{ grid-column: auto; }
+  .field-list li{ font-size: .92rem; }
+}
+
+.fields-note{
+  margin: 2rem 0 0;
+  font-size: .8rem;
+  line-height: 1.95;
+  color: #8A939C;
+  border-top: 1px solid rgba(22,40,58,.08);
+  padding-top: .9rem;
+}
