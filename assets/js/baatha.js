@@ -65,14 +65,25 @@
       html +=   '<div class="bth-group-head">';
       html +=     '<h2 class="bth-group-title">المجلد ' + esc(vol) + '</h2>';
       html +=     '<span class="bth-group-year">' + esc(g[0].year) + '</span>';
-      html +=     '<span class="bth-group-count">' + g.length + ' مادة</span>';
+      html +=     '<span class="bth-group-count">' + countLabel(g.length) + '</span>';
       html +=   '</div>';
       html +=   g.map(itemHTML).join('');
       html += '</section>';
     });
 
     listEl.innerHTML = html;
-    if (countEl) countEl.textContent = rows.length + ' مادة · ديسمبر ١٩٤٦ – يونيو ١٩٥٣';
+    if (countEl) countEl.textContent = countLabel(rows.length) + ' · ديسمبر ١٩٤٦ – يونيو ١٩٥٣';
+  }
+
+  function arabicNum(n) {
+    return String(n).replace(/\d/g, function (d) { return '٠١٢٣٤٥٦٧٨٩'[d]; });
+  }
+
+  function countLabel(n) {
+    if (n === 1) return 'مادة واحدة';
+    if (n === 2) return 'مادتان';
+    if (n <= 10) return arabicNum(n) + ' مواد';
+    return arabicNum(n) + ' مادة';
   }
 
   function wire(selector, attr, setter) {
