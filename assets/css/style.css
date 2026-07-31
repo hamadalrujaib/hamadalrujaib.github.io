@@ -1031,11 +1031,12 @@ a{color:inherit;text-decoration:none;}
 .fields{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.4rem 3rem;
+  gap: 2.6rem 3rem;
   margin-top: 1.8rem;
+  align-items: start;
 }
 
-.field:last-child{ grid-column: 1 / -1; }
+.field{ min-width: 0; }
 
 .field-title{
   font-family: "Amiri", serif;
@@ -1090,7 +1091,6 @@ a{color:inherit;text-decoration:none;}
     grid-template-columns: 1fr;
     gap: 1.9rem;
   }
-  .field:last-child{ grid-column: auto; }
   .field-list li{ font-size: .92rem; }
 }
 
