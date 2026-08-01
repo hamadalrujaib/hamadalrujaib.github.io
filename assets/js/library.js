@@ -105,6 +105,35 @@
       el.appendChild(n);
     }
 
+    /* ── صور المادة، إن وُجدت ── */
+    if (x.images && x.images.length) {
+      var box = document.createElement('div');
+      box.className = 'lib-docs';
+      x.images.forEach(function (img) {
+        var fig = document.createElement('figure');
+        fig.className = 'lib-doc';
+        fig.tabIndex = 0;
+        fig.setAttribute('role', 'button');
+        fig.setAttribute('aria-label', 'تكبير الصفحة');
+        var i = document.createElement('img');
+        i.src = 'assets/img/thumb-' + img.file;
+        i.alt = img.caption || 'صفحة';
+        i.loading = 'lazy';
+        i.decoding = 'async';
+        i.addEventListener('error', function onErr() {
+          i.removeEventListener('error', onErr);
+          i.src = 'assets/img/' + img.file;
+        });
+        fig.appendChild(i);
+        fig.addEventListener('click', function () { openDoc(img); });
+        fig.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoc(img); }
+        });
+        box.appendChild(fig);
+      });
+      el.appendChild(box);
+    }
+
     return el;
   }
 
@@ -141,6 +170,37 @@
   }
 
   window.addEventListener('hashchange', goToHash);
+
+  /* ── عارض الصفحات ── */
+  var lb, lbImg, lbCap;
+  function buildLightbox() {
+    lb = document.createElement('div');
+    lb.className = 'doc-lb';
+    lb.hidden = true;
+    lb.innerHTML = '<button class="doc-lb-close" type="button" aria-label="إغلاق">\u00d7</button>' +
+                   '<div class="doc-lb-inner"><img alt=""><p class="doc-lb-cap"></p></div>';
+    document.body.appendChild(lb);
+    lbImg = lb.querySelector('img');
+    lbCap = lb.querySelector('.doc-lb-cap');
+    lb.querySelector('.doc-lb-close').addEventListener('click', closeDoc);
+    lb.addEventListener('click', function (e) { if (e.target === lb) closeDoc(); });
+    document.addEventListener('keydown', function (e) {
+      if (!lb.hidden && e.key === 'Escape') closeDoc();
+    });
+  }
+  function openDoc(img) {
+    if (!lb) buildLightbox();
+    lbImg.src = 'assets/img/' + img.file;
+    lbImg.alt = img.caption || 'صفحة';
+    lbCap.textContent = img.caption || '';
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDoc() {
+    lb.hidden = true;
+    lbImg.src = '';
+    document.body.style.overflow = '';
+  }
 
   function arabicNum(n) {
     return String(n).replace(/\d/g, function (d) {
