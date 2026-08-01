@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مهزلة في مهزلة — حمد عيسى الرجيب</title>
+<meta name="description" content="قطعة من الفصل الأول من رواية «مهزلة في مهزلة» — وضع فكرتها حمد عيسى الرجيب ونظمها شعراً أحمد مشاري العدواني، مجلة البعثة، فبراير ١٩٤٨.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/img/icon-32.png">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/img/icon-192.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/img/icon-180.png">
+<meta name="theme-color" content="#F7F4EE">
+<link rel="stylesheet" href="../assets/css/style.css?v=16">
+<link rel="stylesheet" href="../assets/css/text.css?v=4">
+<link rel="canonical" href="https://hamadalrujaib.org/works/mahzala.html">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="أرشيف حمد عيسى الرجيب">
+<meta property="og:locale" content="ar_KW">
+<meta property="og:url" content="https://hamadalrujaib.org/works/mahzala.html">
+<meta property="og:title" content="مهزلة في مهزلة — أرشيف حمد عيسى الرجيب">
+<meta property="og:description" content="قطعة من الفصل الأول من رواية «مهزلة في مهزلة» — وضع فكرتها حمد عيسى الرجيب ونظمها شعراً أحمد مشاري العدواني، مجلة البعثة، فبراير ١٩٤٨.">
+<meta property="og:image" content="https://hamadalrujaib.org/assets/img/share.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  .st-scans { margin: 2.6rem auto 0; max-width: 62ch; }
+  .st-scans > h2 {
+    font-family: "Amiri", serif; font-size: 1.28rem; font-weight: 700;
+    margin: 0 0 1.1rem; color: #2E2A24;
+  }
+  .st-scans-grid {
+    display: grid; gap: 1.4rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .st-scans .tx-scan-item { margin: 0; cursor: zoom-in; text-align: center; }
+  .st-scans .tx-scan-item img {
+    width: 100%; height: auto; display: block;
+    background: #fff; border: 1px solid rgba(0,0,0,.14); border-radius: 3px;
+    transition: border-color .15s ease;
+  }
+  .st-scans .tx-scan-item:hover img,
+  .st-scans .tx-scan-item:focus-visible img { border-color: #A8894B; outline: none; }
+  .st-scans .tx-scan-item figcaption {
+    margin-top: .5rem; font-size: .82rem; color: #8A8175;
+  }
+  .st-scans .tx-scan-note { margin: 1rem 0 0; font-size: .84rem; color: #8A8175; }
+
+  /* ── نصّ مسرحي منظوم ── */
+  .pl-body { max-width: 62ch; margin-inline: auto; }
+
+  .pl-char {
+    font-family: "Amiri", serif; font-weight: 700; font-size: 1.06rem;
+    color: #16283A; margin: 1.5rem 0 .35rem;
+  }
+  .pl-char .pl-dir { font-family: "IBM Plex Sans Arabic", sans-serif;
+    font-weight: 400; font-size: .88rem; color: #8A8175; }
+
+  .pl-stage {
+    font-size: .9rem; color: #8A8175; text-align: center;
+    margin: 1.6rem 0; letter-spacing: .01em;
+  }
+
+  .pl-prose { margin: .4rem 0 .4rem; line-height: 1.95; }
+
+  .pl-verse { margin: .5rem 0 .2rem; }
+  .pl-line {
+    display: flex; gap: 1.6rem; justify-content: center;
+    font-family: "Amiri", serif; font-size: 1.14rem; line-height: 2.1;
+    color: #2E2A24; padding: .1rem 0;
+  }
+  .pl-line > span { flex: 1 1 0; }
+  .pl-line > span:first-child { text-align: left; }
+  .pl-line > span:last-child  { text-align: right; }
+  .pl-line.is-single { justify-content: center; }
+  .pl-line.is-single > span { flex: 0 1 auto; text-align: center; }
+
+  @media (max-width: 560px) {
+    .pl-line { flex-direction: column; gap: 0; align-items: center; margin-bottom: .6rem; }
+    .pl-line > span, .pl-line > span:first-child, .pl-line > span:last-child { text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">تخطَّ إلى المحتوى</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="../index.html">
+      <img class="brand-logo" src="../assets/img/logo-header.png"
+           srcset="../assets/img/logo-header.png 1x, ../assets/img/logo-header@2x.png 2x"
+           alt="" width="46" height="46">
+      <span class="brand-text">
+        <span class="brand-name">حمد عيسى الرجيب</span>
+        <span class="brand-sub">أرشيف رقمي</span>
+      </span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">القائمة</button>
+    <nav id="nav" class="nav">
+      <a href="../index.html">الرئيسية</a>
+      <a href="../biography.html">السيرة</a>
+      <a href="../timeline.html">الخط الزمني</a>
+      <a href="../gallery.html">الصور</a>
+      <a href="../music.html">الألحان والتسجيلات</a>
+      <a href="../works.html" aria-current="page">أعماله</a>
+      <a href="../documents.html">وثائق</a>
+      <a href="../baatha.html">البعثة</a>
+      <a href="../book.html">الكتاب</a>
+      <a href="../library.html">كُتب عنه</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow">من أعماله</p>
+      <h1>مهزلة في مهزلة</h1>
+      <p class="page-dates">قطعة من الفصل الأول · مجلة البعثة، العدد الثاني — فبراير ١٩٤٨ · ص ٤٤ من المجلد</p>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+    <p class="tx-back"><a href="../works.html">العودة إلى «أعماله»</a></p>
+
+    <section class="st-intro">
+      <h2>عن الرواية</h2>
+      <p>
+        رواية شعرية هزلية للمسرح المدرسي، وضع فكرتها حمد عيسى الرجيب ونظمها شعراً
+        أحمد مشاري العدواني. عُرضت في حفل المولد النبوي ببيت الكويت بالقاهرة (فبراير ١٩٤٨)،
+        ونشرت المجلة في العدد نفسه هذه القطعة من فصلها الأول. ثم طبعتها البعثة ونشرتها
+        للمسرح المدرسي، فكانت — كما وصفها أحمد الشرباصي — أول مجهود لبعثة الكويت يُنشر في كتاب.
+      </p>
+      <p class="st-hint">هذا كل ما نشرته المجلة من النصّ؛ وبقيّة الرواية في طبعتها المستقلة.</p>
+    </section>
+
+    <article class="tx-body pl-body">
+
+      <p class="pl-char">حنبل: <span class="pl-dir">( منادياً )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>تعالَ إليَّ يا تنبل</span><span>تعالَ إليَّ يا تنبل</span></div>
+      </div>
+
+      <p class="pl-char">تنبل: <span class="pl-dir">( داخلاً )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>فمُرني بالذي أفعل</span><span>لك الأمر لك النهي</span></div>
+      </div>
+
+      <p class="pl-stage">( يتفرّس به )</p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>وأيُّ سحابةٍ غمرت جنابك</span><span>عجيبٌ أيُّ شيءٍ قد أصابك</span></div>
+        <div class="pl-line"><span>إذا طرق البلاءُ عليك بابك</span><span>عهدتُك من أشدّ الناس صبراً</span></div>
+        <div class="pl-line"><span>بعزمٍ طالما أعلى ركابك</span><span>تصادم كلَّ داهيةٍ نآدٍ</span></div>
+        <div class="pl-line"><span>صغَت مذعورةً ودعت عتابك</span><span>وكنتَ إذا عتبتَ على الليالي</span></div>
+      </div>
+
+      <p class="pl-char">حنبل: <span class="pl-dir">( بألمٍ )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>قرأتُ بها آلامها وشجونها</span><span>لقد وردتني من سليمى رسالة</span></div>
+        <div class="pl-line"><span>فواحزَنا! لو كان لي أن أعينها</span><span>لقد عشّش الداء العضال بصدرها</span></div>
+      </div>
+      <p class="pl-prose">فماذا ترى يا صاحِ؟</p>
+
+      <p class="pl-char">تنبل: <span class="pl-dir">( مرتبكاً )</span></p>
+      <p class="pl-prose">لا شيءَ مطلقاً.</p>
+
+      <p class="pl-char">حنبل:</p>
+      <p class="pl-prose">ألستَ ترى رأيي؟</p>
+
+      <p class="pl-char">تنبل:</p>
+      <p class="pl-prose">نعم، هو ما أرى.</p>
+
+      <p class="pl-char">حنبل:</p>
+      <p class="pl-prose">أرى أنني أمضي إليها، فما ترى؟</p>
+
+      <p class="pl-char">تنبل: <span class="pl-dir">( فرحاً )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line is-single"><span>وجدتُ الحِجى كلَّ الحِجى أن تسافر</span></div>
+      </div>
+
+      <p class="pl-char">حنبل:</p>
+      <div class="pl-verse">
+        <div class="pl-line is-single"><span>ولكن مَن لأشغالي وأعمالي في المكتب</span></div>
+      </div>
+
+      <p class="pl-char">تنبل: <span class="pl-dir">( بفخرٍ )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line is-single"><span>لها علمي لها فنّي لها اللهُ إذا أتعبْ</span></div>
+      </div>
+
+      <p class="pl-char">حنبل:</p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>وكن لي الخلف الصالح في تيسير أرزاقي</span><span>إذن دونك أختامي وأدراجي وأوراقي</span></div>
+      </div>
+
+      <p class="pl-char">تنبل:</p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>خلفَه خيرُ سلف</span><span>سوف ترى خيرَ خلفٍ</span></div>
+      </div>
+
+      <p class="pl-char">حنبل:</p>
+      <p class="pl-prose">والآن؟</p>
+
+      <p class="pl-char">تنبل:</p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>في الرحيل وفي الإقامة</span><span>تصحبك السلامة</span></div>
+      </div>
+
+      <p class="pl-stage">( يخرج حنبل )</p>
+
+      <p class="pl-char">تنبل: <span class="pl-dir">( ساخراً )</span></p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>إلى حيث ألقت رحلها أمُّ قشعم</span><span>ترحّل إلى سلمى وإن شئت فارتحل</span></div>
+      </div>
+
+      <p class="pl-stage">( بزهوٍ )</p>
+      <div class="pl-verse">
+        <div class="pl-line"><span>بيدي الشغل والعمل</span><span>إني صاحب المحل</span></div>
+        <div class="pl-line"><span>ومديرٌ بلا جدل</span><span>أنا — ناهٍ وآمرٌ</span></div>
+        <div class="pl-line"><span>ولي أبرعُ الحيل</span><span>حِيَلٌ كلُّها الحياة</span></div>
+        <div class="pl-line"><span>صارمٌ في يد البطل</span><span>إنما الأمر في يدي</span></div>
+      </div>
+
+    </article>
+
+    <section class="st-scans" aria-labelledby="scans-h">
+      <h2 id="scans-h">الصفحات الأصلية</h2>
+      <div class="st-scans-grid">
+
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ٤٤"
+                data-full="../assets/img/doc-mahzala-03.jpg"
+                data-cap="مجلة البعثة — العدد الثاني، فبراير ١٩٤٨، ص ٤٤ من المجلد. «قطعة من الفصل الأول من رواية مهزلة في مهزلة» في أسفل الصفحة، وأعلاها زاوية «هنا الكويت».">
+          <img src="../assets/img/thumb-doc-mahzala-03.jpg" loading="lazy" decoding="async"
+               alt="صفحة ٤٤ من مجلة البعثة، وفيها قطعة من الفصل الأول من مهزلة في مهزلة">
+          <figcaption>ص ٤٤ — النصّ</figcaption>
+        </figure>
+
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ٣٦"
+                data-full="../assets/img/doc-mahzala-01.jpg"
+                data-cap="مجلة البعثة — العدد الثاني، فبراير ١٩٤٨، ص ٣٦ من المجلد. زاوية «في بيت الكويت»: خبر حفل المولد النبوي، وفيه أن فكرة الرواية لحمد الرجيب ونظمها شعراً أحمد العدواني.">
+          <img src="../assets/img/thumb-doc-mahzala-01.jpg" loading="lazy" decoding="async"
+               alt="صفحة ٣٦ من مجلة البعثة، خبر حفل المولد النبوي">
+          <figcaption>ص ٣٦ — خبر العرض</figcaption>
+        </figure>
+
+        <figure class="tx-scan-item st-scan" tabindex="0" role="button"
+                aria-label="تكبير الصفحة ٣٧"
+                data-full="../assets/img/doc-mahzala-02.jpg"
+                data-cap="مجلة البعثة — العدد الثاني، فبراير ١٩٤٨، ص ٣٧ من المجلد. صورة فريق التمثيل في المنظر الأول من «مهزلة في مهزلة» يتوسطهم حمد الرجيب، وصورة فريق الأناشيد بالبيت.">
+          <img src="../assets/img/thumb-doc-mahzala-02.jpg" loading="lazy" decoding="async"
+               alt="صفحة ٣٧ من مجلة البعثة، صورة فريق التمثيل في المنظر الأول من الرواية">
+          <figcaption>ص ٣٧ — صور العرض</figcaption>
+        </figure>
+
+      </div>
+      <p class="tx-scan-note">
+        الصفحات كما نُشرت في مجلة البعثة، العدد الثاني من السنة الثانية، فبراير ١٩٤٨.
+        تضمّ إلى جانب مادة الرواية موادّ أخرى من العدد. اضغط أي صفحة لتكبيرها.
+      </p>
+    </section>
+
+    <div class="tx-share" data-url="https://hamadalrujaib.org/works/mahzala.html" data-title="مهزلة في مهزلة — حمد عيسى الرجيب">
+      <span class="tx-share-label">مشاركة</span>
+      <div class="tx-share-btns">
+        <button class="sh sh-native" type="button" hidden aria-label="مشاركة">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <circle cx="18" cy="5" r="2.6"/><circle cx="6" cy="12" r="2.6"/><circle cx="18" cy="19" r="2.6"/>
+            <path d="M8.4 10.8l7.2-4.1M8.4 13.2l7.2 4.1"/>
+          </svg><span>مشاركة</span>
+        </button>
+        <a class="sh sh-wa" href="#" target="_blank" rel="noopener" aria-label="مشاركة عبر واتساب">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M12 2a10 10 0 00-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1012 2zm0 1.8a8.2 8.2 0 016.9 12.6l.8 3-3.1-.8A8.2 8.2 0 1112 3.8zm-3.6 4c-.2 0-.5.1-.7.4-.3.3-.9.9-.9 2.1s.9 2.4 1 2.6c.1.2 1.8 2.8 4.4 3.8 2.2.9 2.6.7 3.1.6.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.6-.4c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.4-.5c.1-.2.2-.3.2-.5 0-.1 0-.3-.1-.4l-.8-1.9c-.2-.5-.4-.4-.5-.4z"/>
+          </svg><span>واتساب</span>
+        </a>
+        <a class="sh sh-x" href="#" target="_blank" rel="noopener" aria-label="مشاركة عبر إكس">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M17.5 3h3l-6.6 7.5L21.7 21h-6l-4.7-6.1L5.6 21h-3l7-8L2.6 3h6.2l4.2 5.6L17.5 3zm-1 16.2h1.6L7.6 4.7H5.9l10.6 14.5z"/>
+          </svg><span>إكس</span>
+        </a>
+        <button class="sh sh-copy" type="button" aria-label="نسخ الرابط">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="9" y="9" width="11" height="11" rx="2"/>
+            <path d="M15 5.5A1.5 1.5 0 0013.5 4h-8A1.5 1.5 0 004 5.5v8A1.5 1.5 0 005.5 15"/>
+          </svg><span>نسخ الرابط</span>
+        </button>
+      </div>
+    </div>
+
+    <p class="source-note">
+      نُشرت القطعة في مجلة «البعثة» — النشرة الثقافية الشهرية الصادرة عن بيت الكويت في القاهرة،
+      العدد الثاني من السنة الثانية، فبراير ١٩٤٨، ص ٤٤ من المجلد، وخبر العرض وصوره في ص ٣٦–٣٧
+      من العدد نفسه (الترقيم متصل عبر السنة، لا ترقيم العدد المفرد عند صدوره).
+      المجلد جمعه وأعاد طباعته مركز البحوث والدراسات الكويتية، الكويت ١٩٩٧.
+      نُقل النصّ عن الأصل، والضبط بالشكل من عندنا لتيسير القراءة،
+      ومن يجد فيه سقطاً أو تحريفاً يسعدنا أن يوافينا به.
+    </p>
+
+  </div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p class="footer-name">أرشيف حمد عيسى الرجيب</p>
+    <div class="footer-contact">
+      <p class="contact-line">للتواصل، أو لإضافة معلومة أو تصحيحها</p>
+      <div class="contact-links">
+        <a class="contact-btn" href="mailto:hamad.essa.alrujaib@gmail.com" aria-label="البريد الإلكتروني">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="2.5" y="4.5" width="19" height="15" rx="2"/>
+            <path d="M3 6.5l9 6.5 9-6.5"/>
+          </svg>
+          <span>البريد الإلكتروني</span>
+        </a>
+        <a class="contact-btn" href="https://instagram.com/hamad.essa.alrujaib" target="_blank" rel="noopener" aria-label="إنستغرام">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <rect x="3" y="3" width="18" height="18" rx="5"/>
+            <circle cx="12" cy="12" r="4"/>
+            <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/>
+          </svg>
+          <span>إنستغرام</span>
+        </a>
+      </div>
+    </div>
+    <p class="footer-rights">
+      جميع الحقوق محفوظة لأسرة حمد عيسى الرجيب. الصور والمواد المنشورة لا يجوز إعادة استخدامها
+      لأغراض تجارية دون إذن كتابي. المواد المنقولة عن مصادر أخرى تعود حقوقها لأصحابها.
+    </p>
+  </div>
+</footer>
+
+<script src="../assets/js/main.js"></script>
+
+<div class="doc-lb" id="clip-lb" hidden>
+  <button class="doc-lb-close" type="button" aria-label="إغلاق">&#215;</button>
+  <div class="doc-lb-inner">
+    <img src="" alt="">
+    <p class="doc-lb-cap"></p>
+  </div>
+</div>
+
+<script>
+(function () {
+  /* المشاركة */
+  var box = document.querySelector('.tx-share');
+  if (box) {
+    var url = box.dataset.url, title = box.dataset.title, enc = encodeURIComponent;
+    box.querySelector('.sh-wa').href = 'https://wa.me/?text=' + enc(title + ' — ' + url);
+    box.querySelector('.sh-x').href  = 'https://twitter.com/intent/tweet?text=' + enc(title) + '&url=' + enc(url);
+    var flash = function (btn, msg) {
+      var s = btn.querySelector('span'), old = s.textContent;
+      s.textContent = msg; btn.classList.add('is-done');
+      setTimeout(function () { s.textContent = old; btn.classList.remove('is-done'); }, 1800);
+    };
+    var copy = box.querySelector('.sh-copy');
+    copy.addEventListener('click', function () {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(function () { flash(copy, 'تم النسخ'); },
+                                               function () { window.prompt('انسخ الرابط:', url); });
+      } else { window.prompt('انسخ الرابط:', url); }
+    });
+    if (navigator.share) {
+      var nat = box.querySelector('.sh-native');
+      nat.hidden = false;
+      nat.addEventListener('click', function () { navigator.share({ title: title, url: url }).catch(function(){}); });
+    }
+  }
+
+  /* تكبير الصفحات الأصلية */
+  var lb = document.getElementById('clip-lb');
+  if (!lb) return;
+  var img = lb.querySelector('img'), cap = lb.querySelector('.doc-lb-cap');
+  var close = function () { lb.hidden = true; img.src = ''; document.body.style.overflow = ''; };
+  Array.prototype.forEach.call(document.querySelectorAll('.st-scan'), function (fig) {
+    var open = function () {
+      img.src = fig.dataset.full;
+      img.alt = fig.querySelector('img').alt;
+      cap.textContent = fig.dataset.cap;
+      lb.hidden = false;
+      document.body.style.overflow = 'hidden';
+    };
+    fig.addEventListener('click', open);
+    fig.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); }
+    });
+  });
+  lb.querySelector('.doc-lb-close').addEventListener('click', close);
+  lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+  document.addEventListener('keydown', function (e) { if (!lb.hidden && e.key === 'Escape') close(); });
+})();
+</script>
+
+</body>
+</html>
