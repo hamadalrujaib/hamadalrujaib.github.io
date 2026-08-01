@@ -1102,3 +1102,34 @@ a{color:inherit;text-decoration:none;}
   border-top: 1px solid rgba(22,40,58,.08);
   padding-top: .9rem;
 }
+/* ===== العلامة الزخرفية ===== */
+/* من إطار صفحة «نتيجة مسابقة القصة» — مجلة البعثة، أغسطس ١٩٤٩ */
+
+.orn-rule{
+  --orn-w: 92px;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--orn-w) + 2rem);
+  max-width: var(--wrap);
+  margin: 0 auto;
+  padding: 26px 24px;
+  min-height: 34px;
+  background: url("../img/ornament.svg") no-repeat center 50%;
+  background-size: var(--orn-w) auto;
+}
+
+.orn-rule::before,
+.orn-rule::after{
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(166,124,61,.30), transparent);
+}
+
+@media (max-width: 700px){
+  .orn-rule{
+    --orn-w: 70px;
+    gap: calc(var(--orn-w) + 1.2rem);
+    padding: 20px 24px;
+  }
+}
