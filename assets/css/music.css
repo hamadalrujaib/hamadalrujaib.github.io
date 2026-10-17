@@ -75,6 +75,36 @@
   background:#1D3449;
 }
 
+/* لوحة ساكنة: تسجيل موثّق بلا نسخة متاحة على الشبكة */
+.ext-facade--static{
+  cursor:default;
+}
+
+.ext-facade--static:hover{
+  background:#16283A;
+}
+
+.ext-mark{
+  width:46px;
+  height:58px;
+  border:2px solid rgba(247,244,238,.85);
+  border-radius:2px;
+  position:relative;
+}
+
+.ext-mark::before,
+.ext-mark::after{
+  content:"";
+  position:absolute;
+  right:9px;
+  left:9px;
+  height:2px;
+  background:rgba(166,124,61,.9);
+}
+
+.ext-mark::before{top:16px;}
+.ext-mark::after{top:28px;}
+
 .ext-facade .yt-play{
   position:static;
   transform:none;
