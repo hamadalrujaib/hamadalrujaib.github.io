@@ -20,25 +20,17 @@
   background:rgba(166,124,61,.06);
 }
 
+.sr-open:hover .sr-icon,
+.sr-open:focus-visible .sr-icon{color:var(--gold);}
+
 .nav{order:3;}
 .nav-toggle{order:4;}
 
-/* العدسة: دائرة وذراع */
+/* العدسة */
 .sr-icon{
-  position:relative;
   display:block;
-  width:13px;height:13px;
-  border:1.6px solid var(--navy);
-  border-radius:50%;
-}
-
-.sr-icon::after{
-  content:"";
-  position:absolute;
-  top:11px;left:-3px;
-  width:7px;height:1.6px;
-  background:var(--navy);
-  transform:rotate(45deg);
+  width:17px;height:17px;
+  color:var(--navy);
 }
 
 /* ---------- اللوحة المنبثقة ---------- */
@@ -73,13 +65,8 @@
 
 .sr-bar .sr-icon{
   flex:0 0 auto;
-  width:15px;height:15px;
-  border-color:var(--gold);
-}
-
-.sr-bar .sr-icon::after{
-  top:12px;left:-4px;width:8px;
-  background:var(--gold);
+  width:20px;height:20px;
+  color:var(--gold);
 }
 
 .sr-input{
@@ -218,13 +205,8 @@
 
 .sp-bar .sr-icon{
   flex:0 0 auto;
-  width:15px;height:15px;
-  border-color:var(--gold);
-}
-
-.sp-bar .sr-icon::after{
-  top:12px;left:-4px;width:8px;
-  background:var(--gold);
+  width:20px;height:20px;
+  color:var(--gold);
 }
 
 .sp-input{
