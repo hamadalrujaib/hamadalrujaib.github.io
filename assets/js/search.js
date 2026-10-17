@@ -212,7 +212,7 @@
     ov.innerHTML =
       '<div class="sr-panel" role="dialog" aria-modal="true" aria-label="البحث في الأرشيف">' +
       '<div class="sr-bar">' +
-      '<span class="sr-icon" aria-hidden="true"></span>' +
+      '<svg class="sr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="13.5" cy="10.5" r="6.75"/><path d="M8.7 15.3L3.6 20.4"/></svg>' +
       '<input class="sr-input" type="search" autocomplete="off" spellcheck="false" ' +
       'placeholder="ابحث عن اسم أو عمل أو مؤسسة…" aria-label="كلمة البحث">' +
       '<button class="sr-esc" type="button" aria-label="إغلاق">×</button>' +
@@ -289,7 +289,7 @@
     btn.className = 'sr-open';
     btn.type = 'button';
     btn.setAttribute('aria-label', 'البحث في الأرشيف');
-    btn.innerHTML = '<span class="sr-icon" aria-hidden="true"></span>';
+    btn.innerHTML = '<svg class="sr-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" aria-hidden="true"><circle cx="13.5" cy="10.5" r="6.75"/><path d="M8.7 15.3L3.6 20.4"/></svg>';
     btn.addEventListener('click', open);
     var toggle = host.querySelector('.nav-toggle');
     if (toggle) host.insertBefore(btn, toggle);
