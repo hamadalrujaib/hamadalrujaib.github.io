@@ -42,11 +42,8 @@
     });
   }
 
-  function buildCard(t) {
-    var card = document.createElement('article');
-    card.className = 'track';
-
-    /* واجهة مؤجّلة: صورة مصغّرة فقط، والمشغّل يُنشأ عند الضغط */
+  /* ── واجهة مؤجّلة ليوتيوب: صورة مصغّرة فقط، والمشغّل يُنشأ عند الضغط ── */
+  function buildYouTube(t) {
     var facade = document.createElement('button');
     facade.className = 'yt-facade';
     facade.type = 'button';
@@ -66,6 +63,37 @@
       frame.allowFullscreen = true;
       facade.replaceWith(frame);
     });
+
+    return facade;
+  }
+
+  /* ── مصدر خارجي لا يقبل التضمين: لوحة انتقال إلى الجهة الحافظة ── */
+  function buildExternal(t) {
+    var link = document.createElement('a');
+    link.className = 'ext-facade';
+    link.href = t.url;
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.setAttribute('aria-label', 'الاستماع في المصدر: ' + (t.title || 'تسجيل'));
+
+    var play = document.createElement('span');
+    play.className = 'yt-play';
+    play.setAttribute('aria-hidden', 'true');
+    link.appendChild(play);
+
+    var cap = document.createElement('span');
+    cap.className = 'ext-caption';
+    cap.textContent = 'الاستماع في المصدر';
+    link.appendChild(cap);
+
+    return link;
+  }
+
+  function buildCard(t) {
+    var card = document.createElement('article');
+    card.className = 'track';
+
+    card.appendChild(t.id ? buildYouTube(t) : buildExternal(t));
 
     var body = document.createElement('div');
     body.className = 'track-body';
@@ -96,14 +124,15 @@
       body.appendChild(n);
     }
 
-    if (t.channel) {
+    if (t.channel || t.source) {
       var s = document.createElement('p');
       s.className = 'track-source';
-      s.textContent = 'المصدر: قناة ' + t.channel + ' على يوتيوب';
+      s.textContent = t.channel
+        ? 'المصدر: قناة ' + t.channel + ' على يوتيوب'
+        : 'المصدر: ' + t.source;
       body.appendChild(s);
     }
 
-    card.appendChild(facade);
     card.appendChild(body);
     return card;
   }
