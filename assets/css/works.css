@@ -104,3 +104,55 @@
   box-shadow: 0 0 0 .6rem rgba(166,124,61,.09);
   transition: background .4s ease, box-shadow .4s ease;
 }
+
+/* ===== أسهم التنقّل في العارض ===== */
+.doc-lb-nav{
+  position:fixed;
+  top:50%;
+  transform:translateY(-50%);
+  width:52px;
+  height:52px;
+  border:0;
+  border-radius:50%;
+  background:rgba(255,255,255,.12);
+  cursor:pointer;
+  z-index:2;
+  transition:background .2s;
+}
+
+.doc-lb-nav[hidden]{display:none;}
+
+.doc-lb-nav:hover,
+.doc-lb-nav:focus-visible{background:rgba(255,255,255,.28);}
+
+.doc-lb-nav::before{
+  content:"";
+  position:absolute;
+  top:50%;
+  left:50%;
+  width:14px;
+  height:14px;
+  border-style:solid;
+  border-color:#F7F4EE;
+  border-width:2px 2px 0 0;
+}
+
+/* السابق على اليمين، والتالي على اليسار — باتجاه القراءة */
+.doc-lb-prev{right:1.5rem;}
+.doc-lb-next{left:1.5rem;}
+
+.doc-lb-prev::before{transform:translate(-50%,-50%) rotate(45deg);}
+.doc-lb-next::before{transform:translate(-50%,-50%) rotate(-135deg);}
+
+.doc-lb-step{
+  margin:.5rem 0 0;
+  font-size:.85rem;
+  color:rgba(247,244,238,.6);
+  letter-spacing:.04em;
+}
+
+@media (max-width:640px){
+  .doc-lb-nav{width:44px;height:44px;}
+  .doc-lb-prev{right:.6rem;}
+  .doc-lb-next{left:.6rem;}
+}
