@@ -1,0 +1,279 @@
+/* ===== البحث في الأرشيف ===== */
+
+/* ---------- الزرّ في الرأس ---------- */
+.sr-open{
+  order:2;
+  margin-inline-start:auto;
+  flex:0 0 auto;
+  width:38px;height:38px;
+  display:flex;align-items:center;justify-content:center;
+  background:none;
+  border:1px solid var(--rule);
+  border-radius:50%;
+  cursor:pointer;
+  transition:border-color .2s, background .2s;
+}
+
+.sr-open:hover,
+.sr-open:focus-visible{
+  border-color:var(--gold);
+  background:rgba(166,124,61,.06);
+}
+
+.nav{order:3;}
+.nav-toggle{order:4;}
+
+/* العدسة: دائرة وذراع */
+.sr-icon{
+  position:relative;
+  display:block;
+  width:13px;height:13px;
+  border:1.6px solid var(--navy);
+  border-radius:50%;
+}
+
+.sr-icon::after{
+  content:"";
+  position:absolute;
+  top:11px;left:-3px;
+  width:7px;height:1.6px;
+  background:var(--navy);
+  transform:rotate(45deg);
+}
+
+/* ---------- اللوحة المنبثقة ---------- */
+.sr-ov{
+  position:fixed;inset:0;z-index:120;
+  background:rgba(22,40,58,.55);
+  backdrop-filter:blur(3px);
+  display:flex;
+  justify-content:center;
+  padding:8vh 20px 20px;
+  overflow-y:auto;
+}
+
+.sr-ov[hidden]{display:none;}
+
+.sr-panel{
+  width:100%;
+  max-width:720px;
+  align-self:flex-start;
+  background:var(--ivory);
+  border:1px solid var(--rule);
+  border-radius:4px;
+  box-shadow:0 24px 60px rgba(22,40,58,.3);
+  overflow:hidden;
+}
+
+.sr-bar{
+  display:flex;align-items:center;gap:12px;
+  padding:16px 20px;
+  border-bottom:1px solid var(--rule);
+}
+
+.sr-bar .sr-icon{
+  flex:0 0 auto;
+  width:15px;height:15px;
+  border-color:var(--gold);
+}
+
+.sr-bar .sr-icon::after{
+  top:12px;left:-4px;width:8px;
+  background:var(--gold);
+}
+
+.sr-input{
+  flex:1 1 auto;
+  font-family:var(--display);
+  font-size:1.45rem;
+  color:var(--navy);
+  background:none;
+  border:0;
+  outline:none;
+  min-width:0;
+}
+
+.sr-input::placeholder{
+  color:#A79E8E;
+  font-size:1.1rem;
+}
+
+.sr-input::-webkit-search-cancel-button{display:none;}
+
+.sr-esc{
+  flex:0 0 auto;
+  width:30px;height:30px;
+  font-size:22px;line-height:1;
+  color:#8C8375;
+  background:none;border:0;cursor:pointer;
+  border-radius:50%;
+}
+
+.sr-esc:hover{background:rgba(22,40,58,.07);color:var(--navy);}
+
+.sr-count{
+  margin:0;
+  padding:10px 20px 0;
+  font-size:.82rem;
+  color:#8C8375;
+  letter-spacing:.03em;
+}
+
+/* ---------- الأسماء المقترحة ---------- */
+.sr-chips{
+  display:flex;flex-wrap:wrap;gap:8px;
+  padding:14px 20px 20px;
+}
+
+.sr-chips[hidden]{display:none;}
+
+.sr-chip{
+  font-family:var(--body);
+  font-size:.85rem;
+  color:var(--navy-soft);
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .2s, color .2s;
+}
+
+.sr-chip:hover,
+.sr-chip:focus-visible{
+  border-color:var(--gold-pale);
+  color:var(--gold);
+}
+
+/* ---------- النتائج ---------- */
+.sr-list{
+  max-height:52vh;
+  overflow-y:auto;
+  padding:0 8px 8px;
+}
+
+.sr-group{
+  margin:14px 12px 6px;
+  padding-bottom:6px;
+  border-bottom:1px solid var(--rule);
+  font-size:.78rem;
+  letter-spacing:.08em;
+  color:var(--gold);
+}
+
+.sr-hit{
+  display:block;
+  padding:11px 12px;
+  border-radius:3px;
+  text-decoration:none;
+  border-inline-start:2px solid transparent;
+}
+
+.sr-hit:hover,
+.sr-hit:focus-visible,
+.sr-hit.is-on{
+  background:var(--paper);
+  border-inline-start-color:var(--gold);
+}
+
+.sr-hit-title{
+  display:block;
+  font-family:var(--display);
+  font-size:1.08rem;
+  color:var(--navy);
+  line-height:1.5;
+}
+
+.sr-hit-snip{
+  display:block;
+  margin-top:3px;
+  font-size:.84rem;
+  color:#6B6457;
+  line-height:1.7;
+}
+
+.sr-hit-snip mark{
+  background:rgba(220,201,166,.5);
+  color:var(--navy);
+  padding:0 2px;
+  border-radius:2px;
+}
+
+.sr-empty{
+  margin:0;
+  padding:26px 20px 30px;
+  text-align:center;
+  color:#8C8375;
+}
+
+/* ---------- صفحة البحث المستقلّة ---------- */
+.sp-bar{
+  display:flex;align-items:center;gap:12px;
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:4px;
+  padding:14px 18px;
+  margin:0 0 .6rem;
+}
+
+.sp-bar .sr-icon{
+  flex:0 0 auto;
+  width:15px;height:15px;
+  border-color:var(--gold);
+}
+
+.sp-bar .sr-icon::after{
+  top:12px;left:-4px;width:8px;
+  background:var(--gold);
+}
+
+.sp-input{
+  flex:1 1 auto;
+  font-family:var(--display);
+  font-size:1.4rem;
+  color:var(--navy);
+  background:none;border:0;outline:none;
+  min-width:0;
+}
+
+.sp-input::placeholder{color:#A79E8E;font-size:1.05rem;}
+.sp-input::-webkit-search-cancel-button{display:none;}
+
+.sp-count{
+  margin:0 0 .4rem;
+  font-size:.82rem;
+  color:#8C8375;
+  letter-spacing:.03em;
+}
+
+.sp-chips{
+  display:flex;flex-wrap:wrap;gap:8px;
+  margin:0 0 1.6rem;
+}
+
+.sp-chips[hidden]{display:none;}
+
+.sp-list{margin:0 0 3rem;}
+
+.sp-list .sr-hit{
+  border-inline-start:2px solid var(--rule);
+  border-radius:0;
+  margin-bottom:2px;
+}
+
+.sp-list .sr-hit:hover,
+.sp-list .sr-hit:focus-visible{
+  border-inline-start-color:var(--gold);
+}
+
+@media (max-width:560px){
+  .sr-ov{padding:0;}
+  .sr-panel{
+    max-width:none;
+    min-height:100%;
+    border:0;border-radius:0;
+  }
+  .sr-list{max-height:none;}
+  .sr-input{font-size:1.25rem;}
+  .sp-input{font-size:1.2rem;}
+}
