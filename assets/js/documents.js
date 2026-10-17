@@ -116,22 +116,55 @@
   function initLightbox() {
     var lb = document.getElementById('doc-lb');
     if (!lb) return;
-    var img = lb.querySelector('img');
-    var cap = lb.querySelector('.doc-lb-cap');
+    var img  = lb.querySelector('img');
+    var cap  = lb.querySelector('.doc-lb-cap');
+    var stepEl = lb.querySelector('.doc-lb-step');
+    var prev = lb.querySelector('.doc-lb-prev');
+    var next = lb.querySelector('.doc-lb-next');
+
+    /* مجموعة الصفحات الحالية: مساحي الوثيقة الواحدة */
+    var set = [], at = 0;
+
+    function show() {
+      var fig = set[at];
+      img.src = fig.dataset.full;
+      img.alt = fig.querySelector('img').alt;
+      cap.textContent = fig.dataset.cap || '';
+      var many = set.length > 1;
+      if (prev) prev.hidden = !many;
+      if (next) next.hidden = !many;
+      if (stepEl) {
+        stepEl.textContent = many
+          ? arabicNum(at + 1) + ' من ' + arabicNum(set.length)
+          : '';
+      }
+    }
+
+    function step(d) {
+      if (set.length < 2) return;
+      at = (at + d + set.length) % set.length;
+      show();
+    }
+
     var close = function () {
       lb.hidden = true;
       img.src = '';
+      set = [];
       document.body.style.overflow = '';
     };
+
     listEl.addEventListener('click', function (e) {
       var fig = e.target.closest ? e.target.closest('.doc-scan') : null;
       if (!fig) return;
-      img.src = fig.dataset.full;
-      img.alt = fig.querySelector('img').alt;
-      cap.textContent = fig.dataset.cap;
+      var box = fig.parentNode;
+      set = Array.prototype.slice.call(box.querySelectorAll('.doc-scan'));
+      at  = set.indexOf(fig);
+      if (at < 0) { set = [fig]; at = 0; }
+      show();
       lb.hidden = false;
       document.body.style.overflow = 'hidden';
     });
+
     listEl.addEventListener('keydown', function (e) {
       if (e.key !== 'Enter' && e.key !== ' ') return;
       var fig = e.target.closest ? e.target.closest('.doc-scan') : null;
@@ -139,10 +172,19 @@
       e.preventDefault();
       fig.click();
     });
+
+    if (prev) prev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    if (next) next.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
+
     lb.querySelector('.doc-lb-close').addEventListener('click', close);
     lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
     document.addEventListener('keydown', function (e) {
-      if (!lb.hidden && e.key === 'Escape') close();
+      if (lb.hidden) return;
+      if (e.key === 'Escape') { close(); return; }
+      if (set.length < 2) return;
+      /* في اتجاه القراءة من اليمين: السهم الأيمن يرجع والأيسر يتقدّم */
+      if (e.key === 'ArrowRight') { e.preventDefault(); step(-1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); step(1); }
     });
   }
 

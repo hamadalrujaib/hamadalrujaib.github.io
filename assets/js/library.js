@@ -109,7 +109,7 @@
     if (x.images && x.images.length) {
       var box = document.createElement('div');
       box.className = 'lib-docs';
-      x.images.forEach(function (img) {
+      x.images.forEach(function (img, idx) {
         var fig = document.createElement('figure');
         fig.className = 'lib-doc';
         fig.tabIndex = 0;
@@ -125,9 +125,9 @@
           i.src = 'assets/img/' + img.file;
         });
         fig.appendChild(i);
-        fig.addEventListener('click', function () { openDoc(img); });
+        fig.addEventListener('click', function () { openDoc(x.images, idx); });
         fig.addEventListener('keydown', function (e) {
-          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoc(img); }
+          if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openDoc(x.images, idx); }
         });
         box.appendChild(fig);
       });
@@ -172,33 +172,71 @@
   window.addEventListener('hashchange', goToHash);
 
   /* ── عارض الصفحات ── */
-  var lb, lbImg, lbCap;
+  var lb, lbImg, lbCap, lbStep, lbPrev, lbNext;
+  var lbSet = [], lbAt = 0;
+
   function buildLightbox() {
     lb = document.createElement('div');
     lb.className = 'doc-lb';
     lb.hidden = true;
-    lb.innerHTML = '<button class="doc-lb-close" type="button" aria-label="إغلاق">\u00d7</button>' +
-                   '<div class="doc-lb-inner"><img alt=""><p class="doc-lb-cap"></p></div>';
+    lb.innerHTML =
+      '<button class="doc-lb-close" type="button" aria-label="إغلاق">×</button>' +
+      '<button class="doc-lb-nav doc-lb-prev" type="button" aria-label="السابق"></button>' +
+      '<button class="doc-lb-nav doc-lb-next" type="button" aria-label="التالي"></button>' +
+      '<div class="doc-lb-inner"><img alt="">' +
+      '<p class="doc-lb-cap"></p><p class="doc-lb-step"></p></div>';
     document.body.appendChild(lb);
-    lbImg = lb.querySelector('img');
-    lbCap = lb.querySelector('.doc-lb-cap');
+    lbImg  = lb.querySelector('img');
+    lbCap  = lb.querySelector('.doc-lb-cap');
+    lbStep = lb.querySelector('.doc-lb-step');
+    lbPrev = lb.querySelector('.doc-lb-prev');
+    lbNext = lb.querySelector('.doc-lb-next');
     lb.querySelector('.doc-lb-close').addEventListener('click', closeDoc);
+    lbPrev.addEventListener('click', function (e) { e.stopPropagation(); step(-1); });
+    lbNext.addEventListener('click', function (e) { e.stopPropagation(); step(1); });
     lb.addEventListener('click', function (e) { if (e.target === lb) closeDoc(); });
     document.addEventListener('keydown', function (e) {
-      if (!lb.hidden && e.key === 'Escape') closeDoc();
+      if (lb.hidden) return;
+      if (e.key === 'Escape') { closeDoc(); return; }
+      if (lbSet.length < 2) return;
+      /* في اتجاه القراءة من اليمين: السهم الأيمن يرجع والأيسر يتقدّم */
+      if (e.key === 'ArrowRight') { e.preventDefault(); step(-1); }
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); step(1); }
     });
   }
-  function openDoc(img) {
-    if (!lb) buildLightbox();
+
+  function step(d) {
+    if (lbSet.length < 2) return;
+    lbAt = (lbAt + d + lbSet.length) % lbSet.length;
+    show();
+  }
+
+  function show() {
+    var img = lbSet[lbAt];
     lbImg.src = 'assets/img/' + img.file;
     lbImg.alt = img.caption || 'صفحة';
     lbCap.textContent = img.caption || '';
+    var many = lbSet.length > 1;
+    lbPrev.hidden = !many;
+    lbNext.hidden = !many;
+    lbStep.textContent = many
+      ? arabicNum(lbAt + 1) + ' من ' + arabicNum(lbSet.length)
+      : '';
+  }
+
+  function openDoc(set, i) {
+    if (!lb) buildLightbox();
+    lbSet = Array.isArray(set) ? set : [set];
+    lbAt  = i || 0;
+    show();
     lb.hidden = false;
     document.body.style.overflow = 'hidden';
   }
+
   function closeDoc() {
     lb.hidden = true;
     lbImg.src = '';
+    lbSet = [];
     document.body.style.overflow = '';
   }
 
