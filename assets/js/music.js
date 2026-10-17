@@ -89,11 +89,31 @@
     return link;
   }
 
+  /* ── تسجيل موثّق بلا نسخة متاحة على الشبكة: لوحة ساكنة ── */
+  function buildPlaque(t) {
+    var box = document.createElement('div');
+    box.className = 'ext-facade ext-facade--static';
+
+    var mark = document.createElement('span');
+    mark.className = 'ext-mark';
+    mark.setAttribute('aria-hidden', 'true');
+    box.appendChild(mark);
+
+    var cap = document.createElement('span');
+    cap.className = 'ext-caption';
+    cap.textContent = 'تسجيل محفوظ لدى الجهة الحافظة';
+    box.appendChild(cap);
+
+    return box;
+  }
+
   function buildCard(t) {
     var card = document.createElement('article');
     card.className = 'track';
 
-    card.appendChild(t.id ? buildYouTube(t) : buildExternal(t));
+    card.appendChild(
+      t.id ? buildYouTube(t) : (t.url ? buildExternal(t) : buildPlaque(t))
+    );
 
     var body = document.createElement('div');
     body.className = 'track-body';
